@@ -4,9 +4,8 @@ package Interface;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 
 import java.math.BigDecimal;
 
@@ -19,7 +18,7 @@ import Processes.Item.Item_Model;
 import Processes.Other.User;
 
 class TEST {
-    static Invoice INV = new Invoice();
+    public static Invoice INV = new Invoice();
     static Integer start_index = 0;
 
     public static User[] Users = {
@@ -41,28 +40,16 @@ class TEST {
 }
 
 public class MainActivity extends AppCompatActivity {
-    Item_Interface Item_Interface_Handler = new Item_Interface();
-    LinearLayout cont;
-    Button add;
+    ListView item_model_list_view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TEST.PREPARE_TEST_SAMPLES(); //TESTING PURPOSES
+        TEST.PREPARE_TEST_SAMPLES(); //TESTING
 
-        cont = findViewById(R.id.container);
-        add = findViewById(R.id.button);
-        add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Item_Interface_Handler.Add_Item_To_Layout(
-                        getApplicationContext(),
-                        "item_card",
-                        cont,
-                        TEST.Items[0].Output()
-                );
-            }
-        });
+        item_model_list_view = (ListView) findViewById(R.id.container);
+        Item_Adapter item_model_list_adapter = new Item_Adapter(this, TEST.INV.Items());
+        item_model_list_view.setAdapter(item_model_list_adapter);
     }
 }

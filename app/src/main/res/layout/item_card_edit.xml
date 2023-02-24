@@ -24,8 +24,8 @@
             BigDecimal _Object_Discount; aaaaaaaa
             Item_Purpose _Purpose = null;
         -->
-        <TextView
-            android:id="@+id/item_model_item_name"
+        <EditText
+            android:id="@+id/item_model_item_name_editing"
             android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
@@ -34,8 +34,8 @@
             android:textSize="@dimen/main_text_size"
             android:textAlignment="center"
             />
-        <TextView
-            android:id="@+id/item_model_item_cost"
+        <EditText
+            android:id="@+id/item_model_item_cost_editing"
             android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
@@ -44,8 +44,8 @@
             android:textSize="@dimen/secondary_text_size"
             android:textAlignment="center"
             />
-        <TextView
-            android:id="@+id/item_model_item_buy_type"
+        <EditText
+            android:id="@+id/item_model_item_buy_type_editing"
             android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
@@ -54,8 +54,8 @@
             android:textSize="@dimen/secondary_text_size"
             android:textAlignment="center"
             />
-        <TextView
-            android:id="@+id/item_model_item_buy_count"
+        <EditText
+            android:id="@+id/item_model_item_buy_count_editing"
             android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
@@ -64,8 +64,8 @@
             android:textSize="@dimen/secondary_text_size"
             android:textAlignment="center"
             />
-        <TextView
-            android:id="@+id/item_model_item_discount"
+        <EditText
+            android:id="@+id/item_model_item_discount_editing"
             android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
@@ -74,8 +74,8 @@
             android:textSize="@dimen/secondary_text_size"
             android:textAlignment="center"
             />
-        <TextView
-            android:id="@+id/item_model_item_buyer"
+        <EditText
+            android:id="@+id/item_model_item_buyer_editing"
             android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
@@ -84,8 +84,8 @@
             android:textSize="@dimen/secondary_text_size"
             android:textAlignment="center"
             />
-        <TextView
-            android:id="@+id/item_model_item_buy_date"
+        <EditText
+            android:id="@+id/item_model_item_buy_date_editing"
             android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
@@ -94,8 +94,8 @@
             android:textSize="@dimen/secondary_text_size"
             android:textAlignment="center"
             />
-        <TextView
-            android:id="@+id/item_model_PURPOSE_PLACE_HOLDER"
+        <EditText
+            android:id="@+id/item_model_PURPOSE_PLACE_HOLDER_editing"
             android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"

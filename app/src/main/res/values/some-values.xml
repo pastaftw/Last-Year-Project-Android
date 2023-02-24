@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="main_text_size">23dp</dimen>
+    <dimen name="secondary_text_size">20dp</dimen>
+    <color name="imdat_mavisi">#9BB7FF</color>
+</resources>

@@ -45,7 +45,7 @@ class TEST {
 }
 
 public class MainActivity extends AppCompatActivity {
-    ScrollView cont;
+    LinearLayout cont;
     Button add;
 
     @Override
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Common.Add_Layout(getApplicationContext(), "item_card", cont);
+                Common.Add_Layout(getApplicationContext(), "item_card", cont, "Hallo");
             }
         });
     }

@@ -5,13 +5,13 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/material_dynamic_neutral60"
-    tools:context="Interface.MainActivity">
+    tools:context="Interface.MainActivity"
+    >
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/teal_200"
         >
         <TextView
             android:id="@+id/textview"
@@ -29,11 +29,21 @@
             tools:layout_editor_absoluteX="158dp"
             tools:layout_editor_absoluteY="480dp"
             />
+
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:id="@+id/container"/>
+            >
+            <LinearLayout
+                    android:id="@+id/container"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,14 +1,14 @@
-package App_Basis.Calculate;
+package Main.Calculate;
 
 //Common Modules
 import java.util.List;
 import java.math.BigDecimal;
 
 //Custom Modules
-import App_Basis.Types;
-import App_Basis.User;
-import App_Basis.Item.Item_Model;
-import App_Basis.Payment.Payment_Main;
+import Main.Other.Types;
+import Main.Other.User;
+import Main.Item.Item_Model;
+import Main.Payment.Payment_Main;
 
 public class Calculate_Logic {
 

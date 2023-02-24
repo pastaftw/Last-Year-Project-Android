@@ -1,4 +1,4 @@
-package App_Basis.Payment;
+package Main.Payment;
 
 //Common Modules
 import java.util.ArrayList;
@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 
 //Custom Modules
 import java.util.List;
-import App_Basis.Types;
+import Main.Other.Types;
 
 public class Payment_Main {
     //Variables

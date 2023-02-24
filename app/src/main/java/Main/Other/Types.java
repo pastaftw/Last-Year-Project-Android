@@ -1,4 +1,4 @@
-package App_Basis;
+package Main.Other;
 
 public class Types {
     public static enum Object_Buy_Types {

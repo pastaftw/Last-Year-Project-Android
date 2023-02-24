@@ -1,4 +1,4 @@
-package App_Basis;
+package Main.Other;
 
 //Common Modules
 import java.util.List;
@@ -6,8 +6,8 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 
 //Custom Modules
-import App_Basis.Item.Item_Model;
-import App_Basis.Item.Item_Purpose;
+import Main.Item.Item_Model;
+import Main.Item.Item_Purpose;
 
 public class Invoice {
     //Variables

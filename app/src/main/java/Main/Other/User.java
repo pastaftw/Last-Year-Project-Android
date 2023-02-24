@@ -1,4 +1,4 @@
-package App_Basis;
+package Main.Other;
 
 public class User {
     //Variables

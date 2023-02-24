@@ -1,10 +1,10 @@
-package App_Basis.Payment;
+package Main.Payment;
 
 //Common Modules
 import java.math.BigDecimal;
 
 //Custom Modules
-import App_Basis.Types.Payment_Types;
+import Main.Other.Types.Payment_Types;
 
 public class Payment_Tag {
     Integer _To_ID;

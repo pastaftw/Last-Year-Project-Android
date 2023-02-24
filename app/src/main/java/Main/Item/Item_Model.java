@@ -1,6 +1,6 @@
-package App_Basis.Item;
+package Main.Item;
 import java.math.BigDecimal;
-import App_Basis.Types.Object_Buy_Types;
+import Main.Other.Types.Object_Buy_Types;
 
 public class Item_Model {
     //Variables
@@ -32,6 +32,19 @@ public class Item_Model {
     public void Discount(BigDecimal value) {_Object_Discount = value;}
     public Item_Purpose Purpose() {return _Purpose;}
     public void Set_Purpose(Item_Purpose value) {_Purpose = value;}
+
+    //Custom Functions
+    public String Output() {
+        return _Object_Buyer.toString() + "," +
+                _Object_Buy_Date.toString() + "," +
+                _Object_Name.toString() + "," +
+                _Object_Buy_Type.toString() + "," +
+                _Object_Buy_Count.toString() + "," +
+                _Object_Cost.toString() + "," +
+                _Object_Discount.toString() + "," +
+                _Purpose.toString()
+                ;
+    }
 
     //Constructor
     public Item_Model(Integer object_buyer, String buy_date, String name, Object_Buy_Types buy_type, Integer buy_count, BigDecimal cost, BigDecimal discount) {

@@ -1,12 +1,12 @@
-package App_Basis.Item;
+package Main.Item;
 
 //Common Modules
 import java.util.List;
 import java.util.ArrayList;
 
 //Custom Modules
-import App_Basis.User;
-import App_Basis.Types.Purpose_List_Types;
+import Main.Other.User;
+import Main.Other.Types.Purpose_List_Types;
 
 public class Item_Purpose {
     //Variables

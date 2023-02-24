@@ -1,13 +1,13 @@
-package Main.Calculate;
+package Processes.Calculate;
 
 //Common Modules
 import java.util.List;
 import java.util.ArrayList;
 
 //Custom Modules
-import Main.Other.User;
-import Main.Item.Item_Model;
-import Main.Payment.Payment_Main;
+import Processes.Other.User;
+import Processes.Item.Item_Model;
+import Processes.Payment.Payment_Main;
 
 public class Calculate_Main {
     //Variables

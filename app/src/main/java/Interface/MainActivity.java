@@ -5,22 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.RelativeLayout;
-import android.widget.ScrollView;
+
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
+
 import ae.ogrenci_usulu.R;
 
 //Custom
-import Main.Other.Invoice;
-import Main.Other.Types;
-import Main.Item.Item_Model;
-import Main.Other.User;
+import Processes.Other.Invoice;
+import Processes.Other.Types;
+import Processes.Item.Item_Model;
+import Processes.Other.User;
 
 class TEST {
     static Invoice INV = new Invoice();
@@ -45,6 +41,7 @@ class TEST {
 }
 
 public class MainActivity extends AppCompatActivity {
+    Item_Interface Item_Interface_Handler = new Item_Interface();
     LinearLayout cont;
     Button add;
 
@@ -59,7 +56,12 @@ public class MainActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Common.Add_Layout(getApplicationContext(), "item_card", cont, "Hallo");
+                Item_Interface_Handler.Add_Item_To_Layout(
+                        getApplicationContext(),
+                        "item_card",
+                        cont,
+                        TEST.Items[0].Output()
+                );
             }
         });
     }

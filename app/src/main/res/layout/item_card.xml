@@ -11,10 +11,20 @@
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         android:background="@color/green"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="5dp"
         >
+        <!--
+            Integer _Object_Buyer; aaaaa
+            String _Object_Buy_Date; aaaaaa
+            String _Object_Name; aaaaaaaaaaa
+            Object_Buy_Types _Object_Buy_Type; aaaa
+            Integer _Object_Buy_Count = 0; aaaaaaaa
+            BigDecimal _Object_Cost; aaaaaaaaaaa
+            BigDecimal _Object_Discount; aaaaaaaa
+            Item_Purpose _Purpose = null;
+        -->
         <TextView
-            android:id="@+id/item_name"
+            android:id="@+id/item_model_item_name"
             android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
@@ -22,6 +32,7 @@
             android:textColor="@color/black"
             />
         <TextView
+            android:id="@+id/item_model_item_cost"
             android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
@@ -29,12 +40,53 @@
             android:textColor="@color/black"
             />
         <TextView
+            android:id="@+id/item_model_item_buy_type"
+            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:text="Item_Cost"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/item_model_item_buy_count"
+            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:text="Item_Cost"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/item_model_item_discount"
             android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
             android:text="Item_Buyer"
             android:textColor="@color/black"
             android:layout_margin="5dp"
+            />
+        <TextView
+            android:id="@+id/item_model_item_buyer"
+            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:text="Item_Cost"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/item_model_item_buy_date"
+            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:text="Item_Cost"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/item_model_PURPOSE_PLACE_HOLDER"
+            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:text="PURPOSE_PLACE_HOLDER"
+            android:textColor="@color/black"
             />
     </LinearLayout>
 </TableLayout>

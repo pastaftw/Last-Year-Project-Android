@@ -1,4 +1,4 @@
-package Main.Other;
+package Processes.Other;
 
 public class Types {
     public static enum Object_Buy_Types {

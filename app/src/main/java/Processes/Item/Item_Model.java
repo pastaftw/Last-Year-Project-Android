@@ -1,19 +1,17 @@
-package Main.Item;
+package Processes.Item;
 import java.math.BigDecimal;
-import Main.Other.Types.Object_Buy_Types;
+import Processes.Other.Types.Object_Buy_Types;
 
 public class Item_Model {
     //Variables
     Integer _Object_Buyer;
-    //Testing Purposes//////////////////
-    //public Item_Buyer _Object_Buyer2;
     String _Object_Buy_Date;
     String _Object_Name;
     Object_Buy_Types _Object_Buy_Type;
     Integer _Object_Buy_Count = 0;
     BigDecimal _Object_Cost;
     BigDecimal _Object_Discount;
-    Item_Purpose _Purpose = null;
+    Item_Purpose _Purpose;
 
     //Properties
     public Integer Buyer() {return _Object_Buyer;}
@@ -33,17 +31,18 @@ public class Item_Model {
     public Item_Purpose Purpose() {return _Purpose;}
     public void Set_Purpose(Item_Purpose value) {_Purpose = value;}
 
-    //Custom Functions
-    public String Output() {
-        return _Object_Buyer.toString() + "," +
-                _Object_Buy_Date.toString() + "," +
-                _Object_Name.toString() + "," +
-                _Object_Buy_Type.toString() + "," +
-                _Object_Buy_Count.toString() + "," +
-                _Object_Cost.toString() + "," +
-                _Object_Discount.toString() + "," +
-                _Purpose.toString()
-                ;
+    //Custom
+    public String[] Output() {
+        return new String[] {
+                _Object_Buyer.toString(),
+                _Object_Buy_Date.toString(), //WILL BE DATE
+                _Object_Name, //IS STRING
+                _Object_Buy_Type.toString(),
+                _Object_Buy_Count.toString(),
+                _Object_Cost.toString(),
+                _Object_Discount.toString(),
+                _Purpose == null ?  "None" : _Purpose.toString(),
+        };
     }
 
     //Constructor

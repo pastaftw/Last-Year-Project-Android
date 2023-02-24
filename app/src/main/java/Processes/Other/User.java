@@ -1,4 +1,4 @@
-package Main.Other;
+package Processes.Other;
 
 public class User {
     //Variables

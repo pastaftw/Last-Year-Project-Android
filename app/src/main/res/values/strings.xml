@@ -1,4 +1,13 @@
 <resources>
-    <string name="app_name"> Öğrenci Usulü </string>
-    <string name="test_string"> TEST_STRING </string>
+    <string name="app_name"> APP_NAME_PLACEHOLDER </string>
+
+    <!--Item Model-->
+    <string name="item_model_item_name_title"> Name: </string>
+    <string name="item_model_item_cost_title"> Cost: </string>
+    <string name="item_model_item_buy_type_title"> Buy Type: </string>
+    <string name="item_model_item_buy_count_title"> Buy Count: </string>
+    <string name="item_model_item_discount_title"> Name </string>
+    <string name="item_model_item_buyer_title"> Name </string>
+    <string name="item_model_item_buy_date_title"> Name </string>
+    <string name="item_model_PURPOSE_PLACE_HOLDER_title"> Name </string>
 </resources>

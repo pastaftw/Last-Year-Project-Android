@@ -1,12 +1,12 @@
-package Main.Item;
+package Processes.Item;
 
 //Common Modules
 import java.util.List;
 import java.util.ArrayList;
 
 //Custom Modules
-import Main.Other.User;
-import Main.Other.Types.Purpose_List_Types;
+import Processes.Other.User;
+import Processes.Other.Types.Purpose_List_Types;
 
 public class Item_Purpose {
     //Variables

@@ -1,4 +1,4 @@
-package Main.Other;
+package Processes.Other;
 
 //Common Modules
 import java.util.List;
@@ -6,8 +6,8 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 
 //Custom Modules
-import Main.Item.Item_Model;
-import Main.Item.Item_Purpose;
+import Processes.Item.Item_Model;
+import Processes.Item.Item_Purpose;
 
 public class Invoice {
     //Variables

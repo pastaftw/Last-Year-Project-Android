@@ -1,29 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id = "@+id/item_model_main_editing"
     android:orientation="vertical"
-    android:layout_height="wrap_content"
-    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_gravity="center"
+    android:layout_centerHorizontal="true"
     >
 
     <LinearLayout
-        android:id="@+id/item_model_item_layout"
+        android:id="@+id/item_model_item_layout_edit"
         android:orientation="vertical"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
-        android:background="@color/imdat_mavisi"
+        android:background="@color/purple_700"
         android:layout_marginBottom="5dp"
         >
-        <!--
-            Integer _Object_Buyer; aaaaa
-            String _Object_Buy_Date; aaaaaa
-            String _Object_Name; aaaaaaaaaaa
-            Object_Buy_Types _Object_Buy_Type; aaaa
-            Integer _Object_Buy_Count = 0; aaaaaaaa
-            BigDecimal _Object_Cost; aaaaaaaaaaa
-            BigDecimal _Object_Discount; aaaaaaaa
-            Item_Purpose _Purpose = null;
-        -->
         <EditText
             android:id="@+id/item_model_item_name_editing"
             android:layout_alignParentLeft="true"
@@ -103,6 +96,13 @@
             android:textColor="@color/black"
             android:textSize="@dimen/secondary_text_size"
             android:textAlignment="center"
+            />
+        <Button
+            android:id="@+id/item_model_button_editing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tıkla"
+            android:layout_gravity="center"
             />
     </LinearLayout>
 </TableLayout>

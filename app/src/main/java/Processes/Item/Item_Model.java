@@ -1,4 +1,6 @@
 package Processes.Item;
+import androidx.annotation.Nullable;
+
 import java.math.BigDecimal;
 import Processes.Other.Types.Object_Buy_Types;
 
@@ -11,7 +13,7 @@ public class Item_Model {
     Integer _Object_Buy_Count = 0;
     BigDecimal _Object_Cost;
     BigDecimal _Object_Discount;
-    Item_Purpose _Purpose;
+    @Nullable Item_Purpose _Purpose;
 
     //Properties
     public Integer Buyer() {return _Object_Buyer;}
@@ -30,20 +32,6 @@ public class Item_Model {
     public void Discount(BigDecimal value) {_Object_Discount = value;}
     public Item_Purpose Purpose() {return _Purpose;}
     public void Set_Purpose(Item_Purpose value) {_Purpose = value;}
-
-    //Custom
-    public String[] Output() {
-        return new String[] {
-                _Object_Buyer.toString(),
-                _Object_Buy_Date.toString(), //WILL BE DATE
-                _Object_Name, //IS STRING
-                _Object_Buy_Type.toString(),
-                _Object_Buy_Count.toString(),
-                _Object_Cost.toString(),
-                _Object_Discount.toString(),
-                _Purpose == null ?  "None" : _Purpose.toString(),
-        };
-    }
 
     //Constructor
     public Item_Model(Integer object_buyer, String buy_date, String name, Object_Buy_Types buy_type, Integer buy_count, BigDecimal cost, BigDecimal discount) {

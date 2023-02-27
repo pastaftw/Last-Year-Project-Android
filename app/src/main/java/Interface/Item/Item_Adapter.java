@@ -1,4 +1,4 @@
-package Interface;
+package Interface.Item;
 
 
 import android.content.Context;
@@ -8,38 +8,18 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
 
 import java.util.ArrayList;
 import java.util.List;
+
+import Interface.Common;
 import Processes.Item.Item_Model;
 import ae.ogrenci_usulu.R;
-
-/*
-class Item_Model_View_Click implements View.OnClickListener {
-    List<Item_Model> item_model_list;
-    Item_Model item_model;
-    Context context;
-
-    ArrayAdapter arrayadapter;
-
-    public Item_Model_View_Click (Context upd_context, Item_Model upd_item_model, List<Item_Model> upd_item_model_list, ArrayAdapter upd_arrayadapter) {
-        context = upd_context;
-        item_model = upd_item_model;
-        item_model_list = upd_item_model_list;
-        arrayadapter = upd_arrayadapter;
-        System.out.println("Run");
-    }
-
-    @Override
-    public void onClick(View view) {
-        item_model_list.remove(item_model);
-        arrayadapter.notifyDataSetChanged();
-    }
-}
-*/
+import Interface.Item.Item_Converter;
 
 public class Item_Adapter extends ArrayAdapter<Item_Model> {
     Context context;
@@ -50,7 +30,6 @@ public class Item_Adapter extends ArrayAdapter<Item_Model> {
         this.context = context;
         item_list = items;
     }
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View item_model_view;
@@ -58,24 +37,21 @@ public class Item_Adapter extends ArrayAdapter<Item_Model> {
         Item_Model current_item_model = item_list.get(position);
 
         if(item_model_view == null) {
-            item_model_view = LayoutInflater.from(context).inflate(R.layout.item_card,parent,false);
+            item_model_view = LayoutInflater.from(context).inflate(R.layout.item_card, parent,false);
         }
 
-        String[] item_model_output = current_item_model.Output();
-        ((TextView) item_model_view.findViewById(R.id.item_model_item_name)).setText(item_model_output[2]);
-        ((TextView) item_model_view.findViewById(R.id.item_model_item_cost)).setText(item_model_output[5]);
-        ((TextView) item_model_view.findViewById(R.id.item_model_item_buy_type)).setText(item_model_output[3]);
-        ((TextView) item_model_view.findViewById(R.id.item_model_item_buy_count)).setText(item_model_output[4]);
-        ((TextView) item_model_view.findViewById(R.id.item_model_item_discount)).setText(item_model_output[6]);
-        ((TextView) item_model_view.findViewById(R.id.item_model_item_buyer)).setText(item_model_output[0]);
-        ((TextView) item_model_view.findViewById(R.id.item_model_item_buy_date)).setText(item_model_output[1]);
-        ((TextView) item_model_view.findViewById(R.id.item_model_PURPOSE_PLACE_HOLDER)).setText(item_model_output[7]);
+        Item_Converter.Convert_Item_Model("ToTextView", item_model_view, Item_Converter.Get_Item_Output(current_item_model));
 
+        //TEST
+        //Common b = new Common();
         //On Item View Click
         item_model_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                item_list.remove(current_item_model);
+                ViewGroup v = (ViewGroup) view.getRootView().findViewById(R.id.item_list_main);
+                parent.setVisibility(View.GONE);
+                Item_Adder a = new Item_Adder();
+                a.Bring_Item_Add_Screen(getContext(), v, current_item_model, new View[] {parent});
                 notifyDataSetChanged();
             }
         });

@@ -4,11 +4,13 @@ package Interface;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import java.math.BigDecimal;
 
+import Interface.Item.Item_Adapter;
 import ae.ogrenci_usulu.R;
 
 //Custom
@@ -41,14 +43,16 @@ class TEST {
 
 public class MainActivity extends AppCompatActivity {
     ListView item_model_list_view;
+    LinearLayout insert_point;
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.item_list);
         TEST.PREPARE_TEST_SAMPLES(); //TESTING
 
-        item_model_list_view = (ListView) findViewById(R.id.container);
+        item_model_list_view = (ListView) findViewById(R.id.item_list_listview);
         Item_Adapter item_model_list_adapter = new Item_Adapter(this, TEST.INV.Items());
         item_model_list_view.setAdapter(item_model_list_adapter);
     }

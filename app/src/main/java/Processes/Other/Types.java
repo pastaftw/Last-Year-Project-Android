@@ -1,23 +1,24 @@
 package Processes.Other;
 
 public class Types {
-    public static enum Object_Buy_Types {
-        Countable,
+    public enum Object_Buy_Types {
+        Countable, //Default
         Kilogram,
         Gram,
     };
 
-    public static enum Item_Buyer_Types {
-        Person,
-        Pool,
+    public enum Item_Buyer_Types {
+        Countable, //Default
+        Persantage,
     };
 
-    public static enum Purpose_List_Types {
+    public enum Purpose_List_Types {
+        None, //Default
         Ignore,
         Share,
     };
 
-    public static enum Payment_Types {
+    public enum Payment_Types {
         Payee,
         Debtor,
     };

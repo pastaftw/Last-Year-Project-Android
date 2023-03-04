@@ -54,6 +54,7 @@ public class Calculate_Logic {
         if (item.Purpose().Type() == Types.Purpose_List_Types.Ignore) {
             Integer non_related_user_count = users.size() - related_users.size();
             payments.forEach((payment) -> {
+                //geliştir
                 related_users.forEach((related_user) -> {
                     if (payment.Owner_ID() != related_user.ID() && payment.Owner_ID() != item.Buyer()) {
                         //Payment Profile

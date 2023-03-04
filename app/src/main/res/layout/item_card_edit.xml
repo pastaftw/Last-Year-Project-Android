@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id = "@+id/item_model_main_editing"
     android:orientation="vertical"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_width="match_parent"
     android:layout_gravity="center"
     android:layout_centerHorizontal="true"
@@ -14,7 +14,7 @@
         android:orientation="vertical"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
-        android:background="@color/purple_700"
+        android:background="@color/green"
         android:layout_marginBottom="5dp"
         >
         <EditText
@@ -67,6 +67,16 @@
             android:textSize="@dimen/secondary_text_size"
             android:textAlignment="center"
             />
+        <!--Purpose-->
+        <RadioGroup
+            android:id="@+id/item_model_item_buyer_container_editing"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:gravity="left"
+            android:background="@color/pavyon_pembesi"
+            />
         <EditText
             android:id="@+id/item_model_item_buyer_editing"
             android:layout_alignParentLeft="true"
@@ -97,6 +107,30 @@
             android:textSize="@dimen/secondary_text_size"
             android:textAlignment="center"
             />
+
+        <!--BUY TYPE-->
+        <RadioGroup
+            android:id="@+id/item_model_item_buy_type_container_editing"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:gravity="left"
+            android:background="@color/pavyon_pembesi"
+            />
+
+        <!--Purpose-->
+        <RadioGroup
+            android:id="@+id/item_model_item_purpose_container_editing"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:gravity="left"
+            android:background="@color/pavyon_pembesi"
+            />
+
+        <!--Confirm Button-->
         <Button
             android:id="@+id/item_model_button_editing"
             android:layout_width="wrap_content"
@@ -105,4 +139,4 @@
             android:layout_gravity="center"
             />
     </LinearLayout>
-</TableLayout>
+</ScrollView>

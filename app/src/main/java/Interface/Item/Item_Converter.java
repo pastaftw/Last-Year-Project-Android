@@ -1,8 +1,10 @@
 package Interface.Item;
 
+import android.text.Layout;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.math.BigDecimal;
@@ -55,7 +57,8 @@ public class Item_Converter {
    */
 
     public static void Update_Item_Model(View parent, Item_Model targ_item_model) {
-        targ_item_model.Buyer(Integer.valueOf(String.valueOf(((EditText) parent.findViewById(R.id.item_model_item_buyer_editing)).getText())));
+        //ADVANCE check values && trim
+        targ_item_model.Buyer(Integer.valueOf(String.valueOf(((EditText) parent.findViewById(R.id.item_model_item_buyer_editing)).getText()).trim()));
         targ_item_model.Buy_Date(String.valueOf(((EditText) parent.findViewById(R.id.item_model_item_buy_date_editing)).getText()));
         targ_item_model.Name(String.valueOf(((EditText) parent.findViewById(R.id.item_model_item_name_editing)).getText()));
         targ_item_model.Buy_Type(Types.Object_Buy_Types.valueOf(String.valueOf(((EditText) parent.findViewById(R.id.item_model_item_buy_type_editing)).getText())));
@@ -87,4 +90,28 @@ public class Item_Converter {
             ((EditText) parent.findViewById(R.id.item_model_PURPOSE_PLACE_HOLDER_editing)).setText(item_model_output[7]);
         }
     }
+
+    public static void Convert_Item_Model2(String style, View parent, String[] item_model_output) {
+        if (style == "ToTextView") {
+            ((TextView) parent.findViewById(R.id.item_model_item_name)).setText(item_model_output[2]);
+            ((TextView) parent.findViewById(R.id.item_model_item_cost)).setText(item_model_output[5]);
+            ((TextView) parent.findViewById(R.id.item_model_item_buy_type)).setText(item_model_output[3]);
+            ((TextView) parent.findViewById(R.id.item_model_item_buy_count)).setText(item_model_output[4]);
+            ((TextView) parent.findViewById(R.id.item_model_item_discount)).setText(item_model_output[6]);
+            ((TextView) parent.findViewById(R.id.item_model_item_buyer)).setText(item_model_output[0]);
+            ((TextView) parent.findViewById(R.id.item_model_item_buy_date)).setText(item_model_output[1]);
+            ((TextView) parent.findViewById(R.id.item_model_PURPOSE_PLACE_HOLDER)).setText(item_model_output[7]);
+        }
+        else if (style == "ToEditText") {
+            ((EditText) parent.findViewById(R.id.item_model_item_name_editing)).setText(item_model_output[2]);
+            ((EditText) parent.findViewById(R.id.item_model_item_cost_editing)).setText(item_model_output[5]);
+            ((EditText) parent.findViewById(R.id.item_model_item_buy_type_editing)).setText(item_model_output[3]);
+            ((EditText) parent.findViewById(R.id.item_model_item_buy_count_editing)).setText(item_model_output[4]);
+            ((EditText) parent.findViewById(R.id.item_model_item_discount_editing)).setText(item_model_output[6]);
+            ((EditText) parent.findViewById(R.id.item_model_item_buyer_editing)).setText(item_model_output[0]);
+            ((EditText) parent.findViewById(R.id.item_model_item_buy_date_editing)).setText(item_model_output[1]);
+            ((EditText) parent.findViewById(R.id.item_model_PURPOSE_PLACE_HOLDER_editing)).setText(item_model_output[7]);
+        }
+    }
 }
+

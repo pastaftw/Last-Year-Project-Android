@@ -50,7 +50,7 @@ public class Item_Adapter extends ArrayAdapter<Item_Model> {
             public void onClick(View view) {
                 ViewGroup v = (ViewGroup) view.getRootView().findViewById(R.id.item_list_main);
                 parent.setVisibility(View.GONE);
-                Item_Adder a = new Item_Adder();
+                Item_Edit a = new Item_Edit();
                 a.Bring_Item_Add_Screen(getContext(), v, current_item_model, new View[] {parent});
                 notifyDataSetChanged();
             }

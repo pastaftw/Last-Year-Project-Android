@@ -3,17 +3,14 @@ package Interface;
 //Common
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ClipData;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
-import Interface.Item.Item_Adapter;
 import Processes.Item.Item_Buyer;
 import ae.ogrenci_usulu.R;
 
@@ -49,6 +46,7 @@ class TEST {
 
 public class MainActivity extends AppCompatActivity {
     ListView item_model_list_view;
+    ListView users_view;
     LinearLayout insert_point;
     Button button;
 
@@ -58,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.item_list);
         TEST.PREPARE_TEST_SAMPLES(); //TESTING
 
-        item_model_list_view = (ListView) findViewById(R.id.item_list_listview);
-        Item_Adapter item_model_list_adapter = new Item_Adapter(this, TEST.INV.Items());
+        item_model_list_view = findViewById(R.id.item_list_listview);
+        Item_Adapter item_model_list_adapter = new Item_Adapter(this, TEST.INV.Users(), TEST.INV.Items());
         item_model_list_view.setAdapter(item_model_list_adapter);
     }
 }

@@ -1,4 +1,4 @@
-package Interface.Item;
+package Interface;
 
 import android.text.Layout;
 import android.view.View;
@@ -69,29 +69,6 @@ public class Item_Converter {
     }
 
     public static void Convert_Item_Model(String style, View parent, String[] item_model_output) {
-        if (style == "ToTextView") {
-            ((TextView) parent.findViewById(R.id.item_model_item_name)).setText(item_model_output[2]);
-            ((TextView) parent.findViewById(R.id.item_model_item_cost)).setText(item_model_output[5]);
-            ((TextView) parent.findViewById(R.id.item_model_item_buy_type)).setText(item_model_output[3]);
-            ((TextView) parent.findViewById(R.id.item_model_item_buy_count)).setText(item_model_output[4]);
-            ((TextView) parent.findViewById(R.id.item_model_item_discount)).setText(item_model_output[6]);
-            ((TextView) parent.findViewById(R.id.item_model_item_buyer)).setText(item_model_output[0]);
-            ((TextView) parent.findViewById(R.id.item_model_item_buy_date)).setText(item_model_output[1]);
-            ((TextView) parent.findViewById(R.id.item_model_PURPOSE_PLACE_HOLDER)).setText(item_model_output[7]);
-        }
-        else if (style == "ToEditText") {
-            ((EditText) parent.findViewById(R.id.item_model_item_name_editing)).setText(item_model_output[2]);
-            ((EditText) parent.findViewById(R.id.item_model_item_cost_editing)).setText(item_model_output[5]);
-            ((EditText) parent.findViewById(R.id.item_model_item_buy_type_editing)).setText(item_model_output[3]);
-            ((EditText) parent.findViewById(R.id.item_model_item_buy_count_editing)).setText(item_model_output[4]);
-            ((EditText) parent.findViewById(R.id.item_model_item_discount_editing)).setText(item_model_output[6]);
-            ((EditText) parent.findViewById(R.id.item_model_item_buyer_editing)).setText(item_model_output[0]);
-            ((EditText) parent.findViewById(R.id.item_model_item_buy_date_editing)).setText(item_model_output[1]);
-            ((EditText) parent.findViewById(R.id.item_model_PURPOSE_PLACE_HOLDER_editing)).setText(item_model_output[7]);
-        }
-    }
-
-    public static void Convert_Item_Model2(String style, View parent, String[] item_model_output) {
         if (style == "ToTextView") {
             ((TextView) parent.findViewById(R.id.item_model_item_name)).setText(item_model_output[2]);
             ((TextView) parent.findViewById(R.id.item_model_item_cost)).setText(item_model_output[5]);

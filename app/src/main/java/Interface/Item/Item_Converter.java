@@ -1,16 +1,14 @@
-package Interface;
+package Interface.Item;
 
-import android.text.Layout;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.math.BigDecimal;
-import java.text.BreakIterator;
-import java.text.DecimalFormat;
+import java.util.List;
 
+import Common.Return_Selected;
 import Processes.Item.Item_Model;
 import Processes.Other.Types;
 import ae.ogrenci_usulu.R;
@@ -65,6 +63,20 @@ public class Item_Converter {
         targ_item_model.Buy_Count(Integer.valueOf(String.valueOf(((EditText) parent.findViewById(R.id.item_model_item_buy_count_editing)).getText())));
         targ_item_model.Cost(new BigDecimal(String.valueOf(((EditText) parent.findViewById(R.id.item_model_item_cost_editing)).getText())));
         targ_item_model.Discount(new BigDecimal(String.valueOf(((EditText) parent.findViewById(R.id.item_model_item_discount_editing)).getText())));
+
+        //SPECIAL STUFF TIME EW
+        ViewGroup item_purpose_container = parent.findViewById(R.id.item_model_item_purpose_container_editing);
+        ViewGroup item_buy_type_container = parent.findViewById(R.id.item_model_item_buy_type_container_editing);
+        String pi = Return_Selected.From_Parent(item_purpose_container);
+        String bti = Return_Selected.From_Parent(item_buy_type_container);
+        String r = "";
+        System.out.println(pi + " " + bti + " " );
+
+        ViewGroup item_buyer_container = parent.findViewById(R.id.item_model_users_container_editing);
+        List<Integer> rlist = Return_Selected.From_Parent_As_List(item_buyer_container);
+        for (int i = 0; i < rlist.size(); i++) {
+            System.out.println("SELECTED: " + rlist.get(i));
+        }
         //targ_item_model.Purpose();
     }
 

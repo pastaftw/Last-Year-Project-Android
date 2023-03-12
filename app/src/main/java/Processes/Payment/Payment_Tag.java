@@ -1,9 +1,9 @@
 package Processes.Payment;
 
 //Common Modules
+
 import java.math.BigDecimal;
 
-//Custom Modules
 import Processes.Other.Types.Payment_Types;
 
 public class Payment_Tag {

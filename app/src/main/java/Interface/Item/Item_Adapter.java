@@ -1,10 +1,13 @@
-package Interface;
+package Interface.Item;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+
 import java.util.List;
+
 import Processes.Item.Item_Model;
 import Processes.Other.User;
 import ae.ogrenci_usulu.R;

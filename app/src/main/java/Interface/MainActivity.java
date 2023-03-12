@@ -1,24 +1,23 @@
 package Interface;
 
 //Common
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.math.BigDecimal;
 
+import Interface.Item.Item_Adapter;
 import Processes.Item.Item_Buyer;
-import ae.ogrenci_usulu.R;
-
-//Custom
+import Processes.Item.Item_Model;
 import Processes.Other.Invoice;
 import Processes.Other.Types;
-import Processes.Item.Item_Model;
 import Processes.Other.User;
+import ae.ogrenci_usulu.R;
 
 class TEST {
     public static Invoice INV = new Invoice();

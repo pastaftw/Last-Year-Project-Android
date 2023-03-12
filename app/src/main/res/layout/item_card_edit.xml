@@ -68,7 +68,7 @@
             android:textAlignment="center"
             />
         <!--Purpose-->
-        <RadioGroup
+        <LinearLayout
             android:id="@+id/item_model_item_buyer_container_editing"
             android:orientation="vertical"
             android:layout_height="wrap_content"
@@ -109,7 +109,7 @@
             />
 
         <!--BUY TYPE-->
-        <RadioGroup
+        <LinearLayout
             android:id="@+id/item_model_item_buy_type_container_editing"
             android:orientation="vertical"
             android:layout_height="wrap_content"
@@ -119,8 +119,8 @@
             android:background="@color/pavyon_pembesi"
             />
 
-        <!--Purpose-->
-        <RadioGroup
+        <!--Purpose Updated-->
+        <LinearLayout
             android:id="@+id/item_model_item_purpose_container_editing"
             android:orientation="vertical"
             android:layout_height="wrap_content"
@@ -129,6 +129,8 @@
             android:gravity="left"
             android:background="@color/pavyon_pembesi"
             />
+
+
         <!--USERSSS-->
         <LinearLayout
             android:id="@+id/item_model_users_container_editing"

@@ -43,41 +43,33 @@ public class Item_Converter {
         );
     }
 
-    /*
-                item_model.Buyer().toString(),
-                item_model.Buy_Date().toString(), //WILL BE DATE
-                item_model.Name(),
-                item_model.Buy_Type().toString(),
-                item_model.Buy_Count().toString(),
-                item_model.Cost().toString(),
-                item_model.Discount().toString(),
-                item_model.Purpose() == null ?  "None" : item_model.Purpose().toString()
-   */
-
     public static void Update_Item_Model(View parent, Item_Model targ_item_model) {
         //ADVANCE check values && trim
-        targ_item_model.Buyer(Integer.valueOf(String.valueOf(((EditText) parent.findViewById(R.id.item_model_item_buyer_editing)).getText()).trim()));
+        //targ_item_model.Buyer(Integer.valueOf(String.valueOf(((EditText) parent.findViewById(R.id.item_model_item_buyer_editing)).getText()).trim()));
         targ_item_model.Buy_Date(String.valueOf(((EditText) parent.findViewById(R.id.item_model_item_buy_date_editing)).getText()));
         targ_item_model.Name(String.valueOf(((EditText) parent.findViewById(R.id.item_model_item_name_editing)).getText()));
-        targ_item_model.Buy_Type(Types.Object_Buy_Types.valueOf(String.valueOf(((EditText) parent.findViewById(R.id.item_model_item_buy_type_editing)).getText())));
+        //targ_item_model.Buy_Type(Types.Object_Buy_Types.valueOf(String.valueOf(((EditText) parent.findViewById(R.id.item_model_item_buy_type_editing)).getText())));
         targ_item_model.Buy_Count(Integer.valueOf(String.valueOf(((EditText) parent.findViewById(R.id.item_model_item_buy_count_editing)).getText())));
         targ_item_model.Cost(new BigDecimal(String.valueOf(((EditText) parent.findViewById(R.id.item_model_item_cost_editing)).getText())));
         targ_item_model.Discount(new BigDecimal(String.valueOf(((EditText) parent.findViewById(R.id.item_model_item_discount_editing)).getText())));
 
-        //SPECIAL STUFF TIME EW
-        ViewGroup item_purpose_container = parent.findViewById(R.id.item_model_item_purpose_container_editing);
-        ViewGroup item_buy_type_container = parent.findViewById(R.id.item_model_item_buy_type_container_editing);
-        String pi = Return_Selected.From_Parent(item_purpose_container);
-        String bti = Return_Selected.From_Parent(item_buy_type_container);
-        String r = "";
-        System.out.println(pi + " " + bti + " " );
+        //CONVERTING TYPES ::::::
+        Types.Item_Buyer_Types item_buyer_type = Types.Item_Buyer_Types.valueOf(Return_Selected.From_Parent(parent.findViewById(R.id.item_model_item_buyer_container_editing)));
+        Types.Object_Buy_Types item_buy_type = Types.Object_Buy_Types.valueOf(Return_Selected.From_Parent(parent.findViewById(R.id.item_model_item_buy_type_container_editing)));
+        Types.Purpose_List_Types item_purpose = Types.Purpose_List_Types.valueOf(Return_Selected.From_Parent(parent.findViewById(R.id.item_model_item_purpose_container_editing)));
+        List<Integer> item_purpose_related_user_indexes = Return_Selected.From_Parent_As_List(parent.findViewById(R.id.item_model_users_container_editing));
 
-        ViewGroup item_buyer_container = parent.findViewById(R.id.item_model_users_container_editing);
-        List<Integer> rlist = Return_Selected.From_Parent_As_List(item_buyer_container);
-        for (int i = 0; i < rlist.size(); i++) {
-            System.out.println("SELECTED: " + rlist.get(i));
+        //Test Output
+        System.out.println("BUYER TYPE: " + item_buyer_type + " BUY TYPE:" + item_buy_type + " ITEM PURPOSE:" + item_purpose.toString() + " " );
+        for (int i = 0; i < item_purpose_related_user_indexes.size(); i++) {
+            System.out.println("SELECTED: " + item_purpose_related_user_indexes.get(i));
         }
         //targ_item_model.Purpose();
+
+        //SPECIAL UPDATE
+        targ_item_model.Buy_Type(item_buy_type);
+        targ_item_model.BUYER_TYPE(item_buyer_type);
+        //reach users
     }
 
     public static void Convert_Item_Model(String style, View parent, String[] item_model_output) {

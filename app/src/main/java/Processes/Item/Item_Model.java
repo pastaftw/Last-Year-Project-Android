@@ -50,9 +50,19 @@ public class Item_Model {
 
     //TESTING AREA
     List<Item_Buyer> _NEW_ITEM_BUYERS = new ArrayList<>();
-    Types.Item_Buyer_Types _NEW_ITEM_BUYER_TYPE = Types.Item_Buyer_Types.Countable;
+    Types.Item_Buyer_Types _NEW_ITEM_BUYER_TYPE;
+
     public List<Item_Buyer> NEW_BUYERS() {return _NEW_ITEM_BUYERS;}
     public void NEW_BUYERS(Item_Buyer value) {_NEW_ITEM_BUYERS.add(value);}
+    public void NEW_BUYERS(Item_Buyer[] value) {
+        for(int i = 0; i < value.length; i++) {
+            _NEW_ITEM_BUYERS.add(value[i]);
+        }
+    }
+
+    public Types.Item_Buyer_Types BUYER_TYPE() {return _NEW_ITEM_BUYER_TYPE;}
+    public void BUYER_TYPE(Types.Item_Buyer_Types value) {_NEW_ITEM_BUYER_TYPE = value;}
+
     public Item_Model(Integer item_buyer, String item_buy_date, String item_name, Object_Buy_Types item_buy_type, Integer item_buy_count, BigDecimal item_cost, BigDecimal item_discount, Item_Buyer TEST) {
         Buyer(item_buyer);
         Buy_Date(item_buy_date);

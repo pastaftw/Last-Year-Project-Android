@@ -8,5 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="green">#7AFF7C</color>
+    <dimen name="main_text_size">23dp</dimen>
+    <dimen name="secondary_text_size">20dp</dimen>
+    <color name="imdat_mavisi">#9BB7FF</color>
+    <color name = "red">#FF0000</color>
     <color name="pavyon_pembesi">#FF6EDA</color>
 </resources>

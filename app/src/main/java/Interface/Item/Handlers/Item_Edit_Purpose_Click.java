@@ -1,16 +1,21 @@
-package Interface.Item;
-import android.graphics.Color;
+//Item_Edit - Purpose List Click Handler
+
+package Interface.Item.Handlers;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
-import androidx.annotation.Nullable;
 import Common.Only_1_onClick;
 
 public class Item_Edit_Purpose_Click extends Only_1_onClick {
+    //Properties
     ViewGroup[] relations;
-    public Item_Edit_Purpose_Click(ViewGroup[] relations) {this.relations = relations;}
 
+    //Constructor
+    public Item_Edit_Purpose_Click(ViewGroup[] relations) {
+        this.relations = relations;
+    }
+
+    //Override Default
     @Override
     public void onClick(View view) {
         super.onClick(view);

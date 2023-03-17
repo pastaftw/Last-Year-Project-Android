@@ -1,14 +1,12 @@
-package Interface.Item;
+//Item Converting
 
+package Interface.Item;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import java.math.BigDecimal;
 import java.util.List;
-
-import Common.Return_Selected;
+import Common.Get_Selected;
 import Processes.Item.Item_Model;
 import Processes.Other.Types;
 import ae.ogrenci_usulu.R;
@@ -54,10 +52,10 @@ public class Item_Converter {
         targ_item_model.Discount(new BigDecimal(String.valueOf(((EditText) parent.findViewById(R.id.item_model_item_discount_editing)).getText())));
 
         //CONVERTING TYPES ::::::
-        Types.Item_Buyer_Types item_buyer_type = Types.Item_Buyer_Types.valueOf(Return_Selected.From_Parent(parent.findViewById(R.id.item_model_item_buyer_container_editing)));
-        Types.Object_Buy_Types item_buy_type = Types.Object_Buy_Types.valueOf(Return_Selected.From_Parent(parent.findViewById(R.id.item_model_item_buy_type_container_editing)));
-        Types.Purpose_List_Types item_purpose = Types.Purpose_List_Types.valueOf(Return_Selected.From_Parent(parent.findViewById(R.id.item_model_item_purpose_container_editing)));
-        List<Integer> item_purpose_related_user_indexes = Return_Selected.From_Parent_As_List(parent.findViewById(R.id.item_model_users_container_editing));
+        Types.Item_Buyer_Types item_buyer_type = Types.Item_Buyer_Types.valueOf(Get_Selected.Only_One_From_Parent(parent.findViewById(R.id.item_model_item_buyer_container_editing)));
+        Types.Object_Buy_Types item_buy_type = Types.Object_Buy_Types.valueOf(Get_Selected.Only_One_From_Parent(parent.findViewById(R.id.item_model_item_buy_type_container_editing)));
+        Types.Purpose_List_Types item_purpose = Types.Purpose_List_Types.valueOf(Get_Selected.Only_One_From_Parent(parent.findViewById(R.id.item_model_item_purpose_container_editing)));
+        List<Integer> item_purpose_related_user_indexes = Get_Selected.List_From_Parent(parent.findViewById(R.id.item_model_users_container_editing));
 
         //Test Output
         System.out.println("BUYER TYPE: " + item_buyer_type + " BUY TYPE:" + item_buy_type + " ITEM PURPOSE:" + item_purpose.toString() + " " );

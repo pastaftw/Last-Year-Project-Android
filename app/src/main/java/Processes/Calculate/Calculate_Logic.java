@@ -4,7 +4,6 @@ package Processes.Calculate;
 
 import java.math.BigDecimal;
 import java.util.List;
-
 import Processes.Item.Item_Model;
 import Processes.Other.Types;
 import Processes.Other.User;

@@ -1,10 +1,9 @@
-package Common;
+//Only 1 Button Click Per Parent
 
-import android.graphics.Color;
+package Common;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import androidx.annotation.Nullable;
 
 public class Only_1_onClick implements View.OnClickListener {
     @Override
@@ -14,12 +13,12 @@ public class Only_1_onClick implements View.OnClickListener {
 
         for (int i = 0; i < parent.getChildCount(); i++) {
             Button targ_button = (Button) parent.getChildAt(i);
-            targ_button.setBackgroundColor(Color.GRAY);
+            Apply_Appearance.Select(targ_button, false);
             targ_button.setClickable(true);
             targ_button.setSelected(false);
         }
 
-        current_button.setBackgroundColor(Color.YELLOW);
+        Apply_Appearance.Select(current_button, true);
         current_button.setClickable(false);
         current_button.setSelected(true);
     }

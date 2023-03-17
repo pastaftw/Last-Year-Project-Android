@@ -1,22 +1,23 @@
-package Interface.Item;
+//Handling Items
 
+package Interface.Item;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-
 import java.util.List;
-
 import Processes.Item.Item_Model;
 import Processes.Other.User;
 import ae.ogrenci_usulu.R;
 
 public class Item_Adapter extends ArrayAdapter<Item_Model> {
+    //Properties
     Context context;
     List<User> user_list;
     List<Item_Model> item_list;
 
+    //Constructor
     public Item_Adapter(Context context, List <User> user_list, List<Item_Model> item_list) {
         super(context, 0, item_list);
         this.context = context;
@@ -24,6 +25,7 @@ public class Item_Adapter extends ArrayAdapter<Item_Model> {
         this.item_list = item_list;
     }
 
+    //Override Default
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View item_model_view;

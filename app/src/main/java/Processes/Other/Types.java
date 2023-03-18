@@ -12,12 +12,13 @@ public class Types {
         Persantage,
     };
 
-    public enum Item_Calculate_Styles {
+    public enum Item_Calculate_Types {
         None, //Default
         Ignore,
         Share,
     };
 
+    //???///
     public enum Payment_Types {
         Payee,
         Debtor,

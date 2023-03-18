@@ -25,6 +25,7 @@ public class Calculate_Logic {
     }
 
     //Share Logic
+    /*
     static void Share(Item_Model item, List <Payment_Main> payments, List <User> related_users) {
         if (item.Purpose().Type() == Types.Item_Calculate_Styles.Share) {
             payments.forEach((payment) -> {
@@ -104,5 +105,5 @@ public class Calculate_Logic {
         else {
             Default(item, payments);
         }
-    }
+    }*/
 }

@@ -70,9 +70,9 @@
             android:textAlignment="center"
             />
 
-        <!--User List-->
+        <!--Buyer Share Style-->
         <LinearLayout
-            android:id="@+id/item_model_user_container_editing"
+            android:id="@+id/item_model_item_buyer_share_type_container_editing"
             android:orientation="vertical"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
@@ -81,9 +81,9 @@
             android:background="@color/imdat_mavisi"
             />
 
-        <!--Buy Share Type-->
+        <!--User List-->
         <LinearLayout
-            android:id="@+id/item_model_item_buyer_container_editing"
+            android:id="@+id/item_model_user_container_editing"
             android:orientation="vertical"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
@@ -105,7 +105,7 @@
 
         <!--Item Calculate Style-->
         <LinearLayout
-            android:id="@+id/item_model_item_calculate_style_container_editing"
+            android:id="@+id/item_model_item_calculate_type_container_editing"
             android:orientation="vertical"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
@@ -116,7 +116,7 @@
 
         <!--Item Calculate Style Related Users-->
         <LinearLayout
-            android:id="@+id/item_model_item_calculate_style_related_users_container_editing"
+            android:id="@+id/item_model_item_calculate_type_related_users_container_editing"
             android:orientation="vertical"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"

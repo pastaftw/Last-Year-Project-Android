@@ -27,7 +27,7 @@ public class Calculate_Main {
     }
 
     public List <Payment_Main> Execute_Calculate(List <User> Users, List <Item_Model> Items) {
-        for (Item_Model item : Items) {Calculate_Logic.Execute_Logic(item, Users, _Payments);}
+        //for (Item_Model item : Items) {Calculate_Logic.Execute_Logic(item, Users, _Payments);}
         return _Payments;
     }
 }

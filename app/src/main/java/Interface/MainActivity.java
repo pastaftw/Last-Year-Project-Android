@@ -10,6 +10,7 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 
 import Interface.Item.Item_Adapter;
 import Processes.Item.Item_Buyer;
@@ -31,15 +32,24 @@ class TEST {
     };
 
     public static Item_Model[] Items = {                                                                                                                                                     //TEST PARAMS
-            new Item_Model(Users[1].ID(), "06/06/2023", "Çekirdik", Types.Item_Buy_Types.Countable, 1, BigDecimal.valueOf(21.50d), BigDecimal.valueOf(0), new Item_Buyer[] {new Item_Buyer(Users[0], BigDecimal.valueOf(1)), new Item_Buyer(Users[1], BigDecimal.valueOf(2))}),
-            new Item_Model(Users[1].ID(), "06/06/2023", "Yer Fıstığı", Types.Item_Buy_Types.Countable, 2, BigDecimal.valueOf(13.50d), BigDecimal.valueOf(0), new Item_Buyer(Users[0], BigDecimal.valueOf(1))),
-            new Item_Model(Users[1].ID(), "06/06/2023", "Leblebi", Types.Item_Buy_Types.Countable, 2, BigDecimal.valueOf(11.50d), BigDecimal.valueOf(0), new Item_Buyer(Users[0], BigDecimal.valueOf(1))),
-            new Item_Model(Users[1].ID(), "06/06/2023", "Bardak", Types.Item_Buy_Types.Countable, 1, BigDecimal.valueOf(9.75d), BigDecimal.valueOf(0), new Item_Buyer(Users[0], BigDecimal.valueOf(1))),
+            new Item_Model(
+                    new Item_Buyer[]{
+                            new Item_Buyer(Users[0], new BigDecimal(16)),
+                            new Item_Buyer(Users[1], new BigDecimal(17)),
+                    },
+                    Types.Item_Buyer_Types.Amount,
+                    "Patates Cipsi",
+                    Types.Item_Buy_Types.Countable,
+                    BigDecimal.valueOf(2),
+                    BigDecimal.valueOf(29.90d),
+                    BigDecimal.valueOf(0),
+                    "DATE_PLACE_HOLDER"
+            ),
     };
 
     public static void PREPARE_TEST_SAMPLES() {
-        for (Integer index = 0;  index < TEST.Users.length; index++) {INV.Add_User(TEST.Users[index]);}
-        for (Integer index = 0;  index < TEST.Items.length; index++) {INV.Add_Item(TEST.Items[index]);}
+        for (int index = 0;  index < TEST.Users.length; index++) {INV.Add_User(TEST.Users[index]);}
+        for (int index = 0;  index < TEST.Items.length; index++) {INV.Add_Item(TEST.Items[index]);}
     }
 }
 
@@ -52,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.item_list);
+        setContentView(R.layout.item_cards);
         TEST.PREPARE_TEST_SAMPLES(); //TESTING
 
         item_model_list_view = findViewById(R.id.item_list_listview);

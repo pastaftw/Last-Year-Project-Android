@@ -1,91 +1,124 @@
 package Processes.Item;
 import androidx.annotation.Nullable;
-
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-
 import Processes.Other.Types;
-import Processes.Other.Types.Item_Buy_Types;
 
 public class Item_Model {
-    //Variables
-    Integer _Item_Buyer;
-    String _Item_Buy_Date;
+    //Item Buyers
+    List<Item_Buyer> _Item_Buyers;
+    public List<Item_Buyer> Get_Buyers() {return _Item_Buyers;}
+    public void Add_Buyer(Item_Buyer value) {_Item_Buyers.add(value);}
+    public void Remove_Buyer(Item_Buyer value){_Item_Buyers.remove(value);}
+    public void Set_All_Buyers(List<Item_Buyer> value) {_Item_Buyers.addAll(value);}
+
+    //Item Buyer Type
+    Types.Item_Buyer_Types _Item_Buyer_Share_Type;
+    public Types.Item_Buyer_Types Get_Buyer_Share_Type() {return _Item_Buyer_Share_Type;}
+    public void Set_Buyer_Share_Type(Types.Item_Buyer_Types value) {_Item_Buyer_Share_Type = value;}
+
+    //Item Name
     String _Item_Name;
-    Item_Buy_Types _Item_Buy_Type;
-    Integer _Item_Buy_Count = 0;
+    public String Get_Name() {return _Item_Name;}
+    public void Set_Name(String value) {_Item_Name = value;}
+
+    //Item Buy Type
+    Types.Item_Buy_Types _Item_Buy_Type;
+    public Types.Item_Buy_Types Get_Buy_Type() {return _Item_Buy_Type;}
+    public void Set_Buy_Type(Types.Item_Buy_Types value) {_Item_Buy_Type = value;}
+
+    //Item Buy Count
+    BigDecimal _Item_Buy_Count;
+    public BigDecimal Get_Buy_Count() {return _Item_Buy_Count;}
+    public void Set_Buy_Count(BigDecimal value) {_Item_Buy_Count = value;}
+
+    //Item Cost
     BigDecimal _Item_Cost;
-    BigDecimal _Item_Discount;
-    @Nullable
-    Item_Calculate_Style _Item_Purpose;
+    public BigDecimal Get_Cost() {return _Item_Cost;}
+    public void Set_Cost(BigDecimal value) {_Item_Cost = value;}
 
-    //Properties
-    public Integer Buyer() {return _Item_Buyer;}
-    public void Buyer(Integer value) {_Item_Buyer = value;}
-    public String Buy_Date() {return _Item_Buy_Date;}
-    public void Buy_Date(String value) {_Item_Buy_Date = value;}
-    public String Name() {return _Item_Name;}
-    public void Name(String value) {_Item_Name = value;}
-    public Item_Buy_Types Buy_Type() {return _Item_Buy_Type;}
-    public void Buy_Type(Item_Buy_Types value) {_Item_Buy_Type = value;}
-    public Integer Buy_Count() {return _Item_Buy_Count;}
-    public void Buy_Count(Integer value) {_Item_Buy_Count = value;}
-    public BigDecimal Cost() {return _Item_Cost;}
-    public void Cost(BigDecimal value) {_Item_Cost = value;}
-    public BigDecimal Discount() {return _Item_Discount;}
-    public void Discount(BigDecimal value) {_Item_Discount = value;}
-    public Item_Calculate_Style Purpose() {return _Item_Purpose;}
-    public void Set_Purpose(Item_Calculate_Style value) {_Item_Purpose = value;}
+    //Item Discount
+    @Nullable BigDecimal _Item_Discount;
+    public BigDecimal Get_Discount() {return _Item_Discount;}
+    public void Set_Discount(BigDecimal value) {_Item_Discount = value;}
 
-    //Constructor
-    public Item_Model(Integer item_buyer, String item_buy_date, String item_name, Item_Buy_Types item_buy_type, Integer item_buy_count, BigDecimal item_cost, BigDecimal item_discount) {
-        Buyer(item_buyer);
-        Buy_Date(item_buy_date);
-        Name(item_name);
-        Buy_Type(item_buy_type);
-        Buy_Count(item_buy_count);
-        Cost(item_cost);
-        Discount(item_discount);
+    //Item Buy Date
+    String _Item_Buy_Date;
+    public String Get_Date() {return _Item_Buy_Date;}
+    public void Set_Date(String value) {_Item_Buy_Date = value;}
+
+    //Item Calculating Style
+    @Nullable Item_Calculate_Style _Item_Calculate_Type;
+    public Item_Calculate_Style Get_Calculate_Style() {return _Item_Calculate_Type;}
+    public void Set_Calculate_Style(Item_Calculate_Style value) {_Item_Calculate_Type = value;}
+
+    //Constructor Default
+    public Item_Model (
+            List<Item_Buyer> _Item_Buyers,
+            Types.Item_Buyer_Types _Item_Buyer_Share_Type,
+            String _Item_Name,
+            Types.Item_Buy_Types _Item_Buy_Type,
+            BigDecimal _Item_Buy_Count,
+            BigDecimal _Item_Cost,
+            BigDecimal _Item_Discount,
+            String _Item_Buy_Date
+    ) {
+        this._Item_Buyers = _Item_Buyers;
+        this._Item_Buyer_Share_Type = _Item_Buyer_Share_Type;
+        this._Item_Name = _Item_Name;
+        this._Item_Buy_Type = _Item_Buy_Type;
+        this._Item_Buy_Count = _Item_Buy_Count;
+        this._Item_Cost = _Item_Cost;
+        this._Item_Discount = _Item_Discount;
+        this._Item_Buy_Date = _Item_Buy_Date;
     }
 
-    //TESTING AREA
-    List<Item_Buyer> _NEW_ITEM_BUYERS = new ArrayList<>();
-    Types.Item_Buyer_Types _NEW_ITEM_BUYER_TYPE;
-
-    public List<Item_Buyer> NEW_BUYERS() {return _NEW_ITEM_BUYERS;}
-    public void NEW_BUYERS(Item_Buyer value) {_NEW_ITEM_BUYERS.add(value);}
-    public void NEW_BUYERS(Item_Buyer[] value) {
-        for(int i = 0; i < value.length; i++) {
-            _NEW_ITEM_BUYERS.add(value[i]);
-        }
+    //Constructor Test!!!
+    public Item_Model (
+            Item_Buyer[] _Item_Buyers,
+            Types.Item_Buyer_Types _Item_Buyer_Share_Type,
+            String _Item_Name,
+            Types.Item_Buy_Types _Item_Buy_Type,
+            BigDecimal _Item_Buy_Count,
+            BigDecimal _Item_Cost,
+            BigDecimal _Item_Discount,
+            String _Item_Buy_Date
+    ) {
+        this._Item_Buyers = new ArrayList<>();
+        this._Item_Buyers.addAll(Arrays.asList(_Item_Buyers));
+        this._Item_Buyer_Share_Type = _Item_Buyer_Share_Type;
+        this._Item_Name = _Item_Name;
+        this._Item_Buy_Type = _Item_Buy_Type;
+        this._Item_Buy_Count = _Item_Buy_Count;
+        this._Item_Cost = _Item_Cost;
+        this._Item_Discount = _Item_Discount;
+        this._Item_Buy_Date = _Item_Buy_Date;
     }
 
-    public Types.Item_Buyer_Types BUYER_TYPE() {return _NEW_ITEM_BUYER_TYPE;}
-    public void BUYER_TYPE(Types.Item_Buyer_Types value) {_NEW_ITEM_BUYER_TYPE = value;}
+    //Constructor With Calculate Style
+    public Item_Model (
+            List<Item_Buyer> _Item_Buyers,
+            Types.Item_Buyer_Types _Item_Buyer_Share_Type,
+            String _Item_Name,
+            Types.Item_Buy_Types _Item_Buy_Type,
+            BigDecimal _Item_Buy_Count,
+            BigDecimal _Item_Cost,
+            BigDecimal _Item_Discount,
+            String _Item_Buy_Date,
+            Item_Calculate_Style _Item_Calculate_Type
 
-    public Item_Model(Integer item_buyer, String item_buy_date, String item_name, Item_Buy_Types item_buy_type, Integer item_buy_count, BigDecimal item_cost, BigDecimal item_discount, Item_Buyer TEST) {
-        Buyer(item_buyer);
-        Buy_Date(item_buy_date);
-        Name(item_name);
-        Buy_Type(item_buy_type);
-        Buy_Count(item_buy_count);
-        Cost(item_cost);
-        Discount(item_discount);
-        NEW_BUYERS(TEST); // TEST
-    }
-    public Item_Model(Integer item_buyer, String item_buy_date, String item_name, Item_Buy_Types item_buy_type, Integer item_buy_count, BigDecimal item_cost, BigDecimal item_discount, Item_Buyer[] TEST) {
-        Buyer(item_buyer);
-        Buy_Date(item_buy_date);
-        Name(item_name);
-        Buy_Type(item_buy_type);
-        Buy_Count(item_buy_count);
-        Cost(item_cost);
-        Discount(item_discount);
-        //TESTTTT
-        for (int i = 0; i < TEST.length; i++) {
-            NEW_BUYERS(TEST[i]);
-        }
+    ) {
+        this._Item_Buyers = _Item_Buyers;
+        this._Item_Buyer_Share_Type = _Item_Buyer_Share_Type;
+        this._Item_Name = _Item_Name;
+        this._Item_Buy_Type = _Item_Buy_Type;
+        this._Item_Buy_Count = _Item_Buy_Count;
+        this._Item_Cost = _Item_Cost;
+        this._Item_Discount = _Item_Discount;
+        this._Item_Buy_Date = _Item_Buy_Date;
+        this._Item_Calculate_Type = _Item_Calculate_Type;
     }
 }
 

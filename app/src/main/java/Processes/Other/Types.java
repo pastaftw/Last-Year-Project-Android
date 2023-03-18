@@ -1,18 +1,18 @@
 package Processes.Other;
 
 public class Types {
-    public enum Object_Buy_Types {
+    public enum Item_Buy_Types {
         Countable, //Default
         Kilogram,
         Gram,
     };
 
     public enum Item_Buyer_Types {
-        Countable, //Default
+        Amount, //Default
         Persantage,
     };
 
-    public enum Purpose_List_Types {
+    public enum Item_Calculate_Styles {
         None, //Default
         Ignore,
         Share,

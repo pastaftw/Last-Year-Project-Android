@@ -10,9 +10,8 @@ import Common.Apply_Appearance;
 import Common.Warning_Info;
 
 public class Item_Edit_Users_Control {
-    public Boolean Control(ViewGroup users_interface, EditText buy_count) {
+    public Boolean Control(ViewGroup users_interface) {
         int child_count = users_interface.getChildCount();
-        int selected_buy_count = Integer.valueOf(buy_count.getText().toString());
         int total_users_selected = 0;
         int total_buy_count = 0;
 
@@ -27,7 +26,6 @@ public class Item_Edit_Users_Control {
                 total_buy_count += Integer.valueOf(targ_edittext.getText().toString());
             }
 
-            System.out.println(targ_toggle.getText() +  " -> " + targ_edittext.getText());
         }
 
         String warning_info = "";
@@ -36,23 +34,12 @@ public class Item_Edit_Users_Control {
 
         Boolean result = true;
 
-        if (selected_buy_count != total_buy_count) {
-            //DOOOOO
-            warning_info_handler.Create_Warning(a, (ViewGroup) users_interface.getParent(), "Buy Counts Are Not Matching!");
-            result = false;
-        }
-
        if (total_users_selected < 1) {
            //DOO
            warning_info_handler.Create_Warning(a, (ViewGroup) users_interface.getParent(), "Did you forget selecting a user?");
            result = false;
        }
 
-       if (selected_buy_count > total_users_selected) {
-           //DOO
-           warning_info_handler.Create_Warning(a, (ViewGroup) users_interface.getParent(), "Something is not right about User list chooices!!");
-           result = false;
-       }
        return result;
     }
 }

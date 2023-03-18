@@ -12,10 +12,10 @@ import Processes.Payment.Payment_Main;
 public class Calculate_Logic {
 
     //Calculating Item Amount
-    static BigDecimal Item_Amount_Logic(Types.Object_Buy_Types type, Integer amount, BigDecimal cost) {
-        if (type == Types.Object_Buy_Types.Countable) {return Calculate_Control.Multiply(cost, amount);}
-        else if (type == Types.Object_Buy_Types.Kilogram) {return Calculate_Control.Multiply(cost, amount);}
-        else if (type == Types.Object_Buy_Types.Gram) {return Calculate_Control.Multiply(cost, Calculate_Control.Convert_To_Kg(amount));}
+    static BigDecimal Item_Amount_Logic(Types.Item_Buy_Types type, Integer amount, BigDecimal cost) {
+        if (type == Types.Item_Buy_Types.Countable) {return Calculate_Control.Multiply(cost, amount);}
+        else if (type == Types.Item_Buy_Types.Kilogram) {return Calculate_Control.Multiply(cost, amount);}
+        else if (type == Types.Item_Buy_Types.Gram) {return Calculate_Control.Multiply(cost, Calculate_Control.Convert_To_Kg(amount));}
         else {throw new Error("Item_Amount_Logic ERROR (Type logic is not defined.)");}
     }
 
@@ -26,7 +26,7 @@ public class Calculate_Logic {
 
     //Share Logic
     static void Share(Item_Model item, List <Payment_Main> payments, List <User> related_users) {
-        if (item.Purpose().Type() == Types.Purpose_List_Types.Share) {
+        if (item.Purpose().Type() == Types.Item_Calculate_Styles.Share) {
             payments.forEach((payment) -> {
                 related_users.forEach((related_user) -> {
                     if (payment.Owner_ID() == related_user.ID() && payment.Owner_ID() != item.Buyer()) {
@@ -50,7 +50,7 @@ public class Calculate_Logic {
 
     //Ignore Logic
     static void Ignore(Item_Model item, List <User> users, List <Payment_Main> payments, List <User> related_users) {
-        if (item.Purpose().Type() == Types.Purpose_List_Types.Ignore) {
+        if (item.Purpose().Type() == Types.Item_Calculate_Styles.Ignore) {
             Integer non_related_user_count = users.size() - related_users.size();
             payments.forEach((payment) -> {
                 //geliştir

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Processes.Item.Item_Model;
-import Processes.Item.Item_Purpose;
+import Processes.Item.Item_Calculate_Style;
 
 public class Invoice {
     //Variables
@@ -22,10 +22,10 @@ public class Invoice {
     public void Add_User(User user) {_Users.add(user);}
     public void Add_User(Integer id, String name, String surname, String username) {_Users.add(new User(id, name, surname, username));}
     public void Add_Item (Item_Model item) {_Items.add(item);}
-    public void Add_Item(Integer buyer, String buy_date, String name, Types.Object_Buy_Types buy_type, Integer buy_count, BigDecimal cost, BigDecimal discount) {_Items.add(new Item_Model(buyer, buy_date, name, buy_type, buy_count, cost, discount));}
-    public void Add_Purpose(Item_Model to, Types.Purpose_List_Types type, User user) {
+    public void Add_Item(Integer buyer, String buy_date, String name, Types.Item_Buy_Types buy_type, Integer buy_count, BigDecimal cost, BigDecimal discount) {_Items.add(new Item_Model(buyer, buy_date, name, buy_type, buy_count, cost, discount));}
+    public void Add_Purpose(Item_Model to, Types.Item_Calculate_Styles type, User user) {
         if (to.Purpose() == null) {
-            Item_Purpose new_purpose = new Item_Purpose(type);
+            Item_Calculate_Style new_purpose = new Item_Calculate_Style(type);
             new_purpose.Add_Related_User(user);
             to.Set_Purpose(new_purpose);
         }

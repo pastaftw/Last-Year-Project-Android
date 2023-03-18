@@ -21,14 +21,14 @@ import ae.ogrenci_usulu.R;
 
 public class Item_Edit_Extra {
     public void Bring_Item_Add_Screen_Extra(Context context, View root, @Nullable ViewGroup[] relations) {
-        ViewGroup item_purpose_container = root.findViewById(R.id.item_model_item_purpose_container_editing);
+        ViewGroup item_purpose_container = root.findViewById(R.id.item_model_item_calculate_style_container_editing);
         ViewGroup item_buy_type_container = root.findViewById(R.id.item_model_item_buy_type_container_editing);
         ViewGroup item_buyer_container = root.findViewById(R.id.item_model_item_buyer_container_editing);
 
         //PURPOSE CONTAINER
-        for (byte i = 0; i < Types.Purpose_List_Types.values().length; i++) {
+        for (byte i = 0; i < Types.Item_Calculate_Styles.values().length; i++) {
             Button new_item_purpose_list_button = new Button(context);
-            new_item_purpose_list_button.setText(Types.Purpose_List_Types.values()[i].name());
+            new_item_purpose_list_button.setText(Types.Item_Calculate_Styles.values()[i].name());
             new_item_purpose_list_button.setTextSize(20);
 
             //Giving Listener
@@ -48,9 +48,9 @@ public class Item_Edit_Extra {
         }
 
         //BUY TYPE CONTAINER
-        for (byte i = 0; i < Types.Object_Buy_Types.values().length; i++) {
+        for (byte i = 0; i < Types.Item_Buy_Types.values().length; i++) {
             Button new_item_buy_type_button = new Button(context);
-            new_item_buy_type_button.setText(Types.Object_Buy_Types.values()[i].name());
+            new_item_buy_type_button.setText(Types.Item_Buy_Types.values()[i].name());
             new_item_buy_type_button.setTextSize(20);
 
             //Giving Listener
@@ -89,7 +89,7 @@ public class Item_Edit_Extra {
     }
 
     public ViewGroup Bring_Purpose_User_List(Context context, View root, List<User> user_list) {
-        ViewGroup v = root.findViewById(R.id.item_model_users_container_editing);
+        ViewGroup v = root.findViewById(R.id.item_model_item_calculate_style_related_users_container_editing);
         for(int i = 0; i < user_list.size(); i++) {
             ToggleButton new_togglebutton = new ToggleButton(context);
             new_togglebutton.setText(user_list.get(i).Name() + " (" + user_list.get(i).Username()+")");

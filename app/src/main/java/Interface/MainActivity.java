@@ -31,10 +31,10 @@ class TEST {
     };
 
     public static Item_Model[] Items = {                                                                                                                                                     //TEST PARAMS
-            new Item_Model(Users[1].ID(), "06/06/2023", "Çekirdik", Types.Object_Buy_Types.Countable, 1, BigDecimal.valueOf(21.50d), BigDecimal.valueOf(0), new Item_Buyer[] {new Item_Buyer(Users[0], BigDecimal.valueOf(1)), new Item_Buyer(Users[1], BigDecimal.valueOf(2))}),
-            new Item_Model(Users[1].ID(), "06/06/2023", "Yer Fıstığı", Types.Object_Buy_Types.Countable, 2, BigDecimal.valueOf(13.50d), BigDecimal.valueOf(0), new Item_Buyer(Users[0], BigDecimal.valueOf(1))),
-            new Item_Model(Users[1].ID(), "06/06/2023", "Leblebi", Types.Object_Buy_Types.Countable, 2, BigDecimal.valueOf(11.50d), BigDecimal.valueOf(0), new Item_Buyer(Users[0], BigDecimal.valueOf(1))),
-            new Item_Model(Users[1].ID(), "06/06/2023", "Bardak", Types.Object_Buy_Types.Countable, 1, BigDecimal.valueOf(9.75d), BigDecimal.valueOf(0), new Item_Buyer(Users[0], BigDecimal.valueOf(1))),
+            new Item_Model(Users[1].ID(), "06/06/2023", "Çekirdik", Types.Item_Buy_Types.Countable, 1, BigDecimal.valueOf(21.50d), BigDecimal.valueOf(0), new Item_Buyer[] {new Item_Buyer(Users[0], BigDecimal.valueOf(1)), new Item_Buyer(Users[1], BigDecimal.valueOf(2))}),
+            new Item_Model(Users[1].ID(), "06/06/2023", "Yer Fıstığı", Types.Item_Buy_Types.Countable, 2, BigDecimal.valueOf(13.50d), BigDecimal.valueOf(0), new Item_Buyer(Users[0], BigDecimal.valueOf(1))),
+            new Item_Model(Users[1].ID(), "06/06/2023", "Leblebi", Types.Item_Buy_Types.Countable, 2, BigDecimal.valueOf(11.50d), BigDecimal.valueOf(0), new Item_Buyer(Users[0], BigDecimal.valueOf(1))),
+            new Item_Model(Users[1].ID(), "06/06/2023", "Bardak", Types.Item_Buy_Types.Countable, 1, BigDecimal.valueOf(9.75d), BigDecimal.valueOf(0), new Item_Buyer(Users[0], BigDecimal.valueOf(1))),
     };
 
     public static void PREPARE_TEST_SAMPLES() {

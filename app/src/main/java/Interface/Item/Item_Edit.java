@@ -37,8 +37,9 @@ public class Item_Edit {
                             //FOR NOW IT'S LIKE THAT BUT I'lL MODULE THIS LATER
                                                       @Override
                                                       public void onClick(View view) {
-                                                          Boolean result = n.Control(test, ((EditText) item_model_view.findViewById(R.id.item_model_item_buy_count_editing)));
+                                                          Boolean result = n.Control(test);
                                                           if (result) {
+                                                              Item_Converter.Convert_Item_View_To_Item_Model(item_model_view, user_list);
                                                               Item_Converter.Update_Item_Model(item_model_view, item_model);
                                                               ((ViewGroup)view.getParent()).removeAllViews();
                                                               relations[0].setVisibility(View.VISIBLE);

@@ -9,14 +9,17 @@
     android:layout_centerHorizontal="true"
     >
 
+    <!--ScrollView Child-->
     <LinearLayout
         android:id="@+id/item_model_item_layout_edit"
         android:orientation="vertical"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
-        android:background="@color/green"
+        android:background="@color/yeni_yesil"
         android:layout_marginBottom="5dp"
         >
+
+        <!--Item Name-->
         <EditText
             android:id="@+id/item_model_item_name_editing"
             android:layout_alignParentLeft="true"
@@ -27,6 +30,8 @@
             android:textSize="@dimen/main_text_size"
             android:textAlignment="center"
             />
+
+        <!--Item Cost-->
         <EditText
             android:id="@+id/item_model_item_cost_editing"
             android:layout_alignParentLeft="true"
@@ -36,27 +41,10 @@
             android:textColor="@color/black"
             android:textSize="@dimen/secondary_text_size"
             android:textAlignment="center"
+            android:inputType="numberDecimal"
             />
-        <EditText
-            android:id="@+id/item_model_item_buy_type_editing"
-            android:layout_alignParentLeft="true"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:text="Item_Cost"
-            android:textColor="@color/black"
-            android:textSize="@dimen/secondary_text_size"
-            android:textAlignment="center"
-            />
-        <EditText
-            android:id="@+id/item_model_item_buy_count_editing"
-            android:layout_alignParentLeft="true"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:text="Item_Cost"
-            android:textColor="@color/black"
-            android:textSize="@dimen/secondary_text_size"
-            android:textAlignment="center"
-            />
+
+        <!--Item Discount-->
         <EditText
             android:id="@+id/item_model_item_discount_editing"
             android:layout_alignParentLeft="true"
@@ -66,8 +54,23 @@
             android:textColor="@color/black"
             android:textSize="@dimen/secondary_text_size"
             android:textAlignment="center"
+            android:inputType="numberDecimal"
             />
-        <!--USERSSS-->
+
+        <!--Item Buy Date-->
+        <EditText
+            android:id="@+id/item_model_item_buy_date_editing"
+            android:inputType="date"
+            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:text="Item_Cost"
+            android:textColor="@color/black"
+            android:textSize="@dimen/secondary_text_size"
+            android:textAlignment="center"
+            />
+
+        <!--User List-->
         <LinearLayout
             android:id="@+id/item_model_user_container_editing"
             android:orientation="vertical"
@@ -75,9 +78,10 @@
             android:layout_width="match_parent"
             android:layout_margin="10dp"
             android:gravity="left"
-            android:background="@color/pavyon_pembesi"
+            android:background="@color/imdat_mavisi"
             />
-        <!--Purpose-->
+
+        <!--Buy Share Type-->
         <LinearLayout
             android:id="@+id/item_model_item_buyer_container_editing"
             android:orientation="vertical"
@@ -85,40 +89,10 @@
             android:layout_width="match_parent"
             android:layout_margin="10dp"
             android:gravity="left"
-            android:background="@color/pavyon_pembesi"
-            />
-        <EditText
-            android:id="@+id/item_model_item_buyer_editing"
-            android:layout_alignParentLeft="true"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:text="Item_Cost"
-            android:textColor="@color/black"
-            android:textSize="@dimen/secondary_text_size"
-            android:textAlignment="center"
-            />
-        <EditText
-            android:id="@+id/item_model_item_buy_date_editing"
-            android:layout_alignParentLeft="true"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:text="Item_Cost"
-            android:textColor="@color/black"
-            android:textSize="@dimen/secondary_text_size"
-            android:textAlignment="center"
-            />
-        <EditText
-            android:id="@+id/item_model_PURPOSE_PLACE_HOLDER_editing"
-            android:layout_alignParentLeft="true"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:text="PURPOSE_PLACE_HOLDER"
-            android:textColor="@color/black"
-            android:textSize="@dimen/secondary_text_size"
-            android:textAlignment="center"
+            android:background="@color/imdat_mavisi"
             />
 
-        <!--BUY TYPE-->
+        <!--Item Buy Type-->
         <LinearLayout
             android:id="@+id/item_model_item_buy_type_container_editing"
             android:orientation="vertical"
@@ -129,9 +103,9 @@
             android:background="@color/pavyon_pembesi"
             />
 
-        <!--Purpose Updated-->
+        <!--Item Calculate Style-->
         <LinearLayout
-            android:id="@+id/item_model_item_purpose_container_editing"
+            android:id="@+id/item_model_item_calculate_style_container_editing"
             android:orientation="vertical"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
@@ -140,10 +114,9 @@
             android:background="@color/pavyon_pembesi"
             />
 
-
-        <!--USERSSS-->
+        <!--Item Calculate Style Related Users-->
         <LinearLayout
-            android:id="@+id/item_model_users_container_editing"
+            android:id="@+id/item_model_item_calculate_style_related_users_container_editing"
             android:orientation="vertical"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"

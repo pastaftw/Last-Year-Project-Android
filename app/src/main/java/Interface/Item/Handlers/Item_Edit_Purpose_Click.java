@@ -22,7 +22,7 @@ public class Item_Edit_Purpose_Click extends Only_1_onClick {
 
         Button current_button = (Button) view;
         ViewGroup parent = (ViewGroup) view.getParent();
-        Boolean relations_visible = false;
+        boolean relations_visible = false;
 
         for (int i = 0; i < parent.getChildCount(); i++) {
             Button targ_button = (Button) parent.getChildAt(i);

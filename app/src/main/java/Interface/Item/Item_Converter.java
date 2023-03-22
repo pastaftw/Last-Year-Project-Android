@@ -144,6 +144,7 @@ public class Item_Converter {
         );
     }
 
+    //UPDATE PLS
     public static void Update_Item_Model(View parent, Item_Model targ_item_model) {
         //ADVANCE check values && trim
         //targ_item_model.Buyer(Integer.valueOf(String.valueOf(((EditText) parent.findViewById(R.id.item_model_item_buyer_editing)).getText()).trim()));

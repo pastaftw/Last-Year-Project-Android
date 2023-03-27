@@ -12,7 +12,10 @@ public class Item_Model {
     public List<Item_Buyer> Get_Buyers() {return _Item_Buyers;}
     public void Add_Buyer(Item_Buyer value) {_Item_Buyers.add(value);}
     public void Remove_Buyer(Item_Buyer value){_Item_Buyers.remove(value);}
-    public void Set_All_Buyers(List<Item_Buyer> value) {_Item_Buyers.addAll(value);}
+    public void Set_All_Buyers(List<Item_Buyer> value) {
+        _Item_Buyers.clear();
+        _Item_Buyers.addAll(value);
+    }
 
     //Item Buyer Type
     Types.Item_Buyer_Types _Item_Buyer_Share_Type;

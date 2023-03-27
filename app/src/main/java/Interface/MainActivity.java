@@ -2,7 +2,12 @@ package Interface;
 
 //Common
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -10,9 +15,10 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
+import java.util.List;
 
 import Interface.Item.Item_Adapter;
+import Interface.Item.Item_Edit_Extra;
 import Processes.Item.Item_Buyer;
 import Processes.Item.Item_Model;
 import Processes.Other.Invoice;
@@ -21,7 +27,6 @@ import Processes.Other.User;
 import ae.ogrenci_usulu.R;
 
 class TEST {
-    public static Invoice INV = new Invoice();
     static Integer start_index = 0;
 
     public static User[] Users = {
@@ -45,28 +50,46 @@ class TEST {
                     BigDecimal.valueOf(0),
                     "DATE_PLACE_HOLDER"
             ),
+            new Item_Model(
+                    new Item_Buyer[]{
+                            new Item_Buyer(Users[0], new BigDecimal(16)),
+                            new Item_Buyer(Users[1], new BigDecimal(17)),
+                    },
+                    Types.Item_Buyer_Types.Amount,
+                    "EŞYA 2",
+                    Types.Item_Buy_Types.Countable,
+                    BigDecimal.valueOf(2),
+                    BigDecimal.valueOf(29.90d),
+                    BigDecimal.valueOf(0),
+                    "DATE_PLACE_HOLDER"
+            ),
     };
-
-    public static void PREPARE_TEST_SAMPLES() {
-        for (int index = 0;  index < TEST.Users.length; index++) {INV.Add_User(TEST.Users[index]);}
-        for (int index = 0;  index < TEST.Items.length; index++) {INV.Add_Item(TEST.Items[index]);}
-    }
 }
 
 public class MainActivity extends AppCompatActivity {
     ListView item_model_list_view;
-    ListView users_view;
-    LinearLayout insert_point;
-    Button button;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //TESTING//////////////////////////////
+        Invoice new_invoice = new Invoice();
+        new_invoice.Set_All_Users(TEST.Users);
+        new_invoice.Set_All_Items(TEST.Items);
+        //END OF TESTING//////////////////////
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.item_cards);
-        TEST.PREPARE_TEST_SAMPLES(); //TESTING
+        setContentView(R.layout.invoice_menu);
 
+        Button invoice_menu_group_button = (Button) findViewById(R.id.invoice_menu_group_button);
+        Button invoice_menu_items_button = (Button) findViewById(R.id.invoice_menu_items_button);
+
+
+        item_model_list_view = findViewById(R.id.invoice_menu_content);
+        Item_Adapter item_model_list_adapter = new Item_Adapter(this, new_invoice.Get_Users(), new_invoice.Get_Items());
+        item_model_list_view.setAdapter(item_model_list_adapter);
+
+        /*
         item_model_list_view = findViewById(R.id.item_list_listview);
         Item_Adapter item_model_list_adapter = new Item_Adapter(this, TEST.INV.Users(), TEST.INV.Items());
         item_model_list_view.setAdapter(item_model_list_adapter);
+        */
     }
 }

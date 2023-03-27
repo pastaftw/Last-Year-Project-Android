@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/invoice_menu_root"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/imdat_mavisi"
+        >
+        <Button
+            android:id="@+id/invoice_menu_group_button"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Group Users"
+            />
+        <Button
+            android:id="@+id/invoice_menu_items_button"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Items"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/invoice_menu_content_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+    <ListView
+        android:id="@+id/invoice_menu_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/yeni_yesil"
+        />
+    </LinearLayout>
+
+</LinearLayout>

@@ -15,6 +15,7 @@ import java.util.Locale;
 import Common.Get_Selected;
 import Processes.Calculate.Calculate_Control;
 import Processes.Item.Item_Buyer;
+import Processes.Item.Item_Calculate_Style;
 import Processes.Item.Item_Model;
 import Processes.Other.Types;
 import Processes.Other.User;
@@ -22,20 +23,28 @@ import ae.ogrenci_usulu.R;
 
 public class Item_Converter {
     public static String[] Get_Item_Output(Item_Model item_model) {
-        String item_buyers = "";
-        String item_calculating_style_relateds = "";
+        String item_buyers;
+        String item_calculating_style_relateds;
 
+        //Reading Item Buyer / Buyers
         if (item_model.Get_Buyers() != null)  {
+            item_buyers = "";
             for (Item_Buyer item_buyer : item_model.Get_Buyers()) {
+                //Output
                 item_buyers += (item_buyer.Buyer().Name() + " (" +  item_buyer.Buyer().Username()+ ")" +  ": " + item_buyer.Cost()) + "\n";
             }
         }
+        else {item_buyers = "No Buyer (???)";}
 
+        //Reading Calculate Style Related Buyer / Buyers
         if (item_model.Get_Calculate_Style() != null) {
-            for (User related : item_model.Get_Calculate_Style().Releated_Users()) {
-                item_calculating_style_relateds += related.Name() + ", ";
+            item_calculating_style_relateds = "";
+            //Output
+            for (User related_user : item_model.Get_Calculate_Style().Get_Releated_Users()) {
+                item_calculating_style_relateds += related_user.Name() + ", " + "\n";
             }
         }
+        else {item_calculating_style_relateds = "No one is exception.";}
 
         return new String[] {
                 item_model.Get_Name(),
@@ -45,8 +54,8 @@ public class Item_Converter {
                 item_model.Get_Buyer_Share_Type().toString(),
                 item_buyers,
                 item_model.Get_Buy_Type().toString(),
-                item_model.Get_Calculate_Style() != null? item_model.Get_Calculate_Style().toString() : Types.Item_Calculate_Types.values()[0].toString(),
-                item_calculating_style_relateds.equals("")? "No one is listed." : item_calculating_style_relateds,
+                item_model.Get_Calculate_Style() != null? item_model.Get_Calculate_Style().Type().toString() : Types.Item_Calculate_Types.values()[0].toString(),
+                item_calculating_style_relateds,
         };
     }
 
@@ -63,7 +72,7 @@ public class Item_Converter {
         EditText item_model_item_discount_view = item_view.findViewById(R.id.item_model_item_discount_editing);
         BigDecimal item_model_item_discount = new BigDecimal(item_model_item_discount_view.getText().toString().trim());
 
-        //ITEM DATE HERE!! (NOT FINAL)
+        //ITEM DATE HERE!! (NOT FINAL) (RETURNS LOCAL TIME FOR NOW) !!!!!!!!!!!
         EditText item_model_item_buy_date_view = item_view.findViewById(R.id.item_model_item_buy_date_editing);
         String item_model_item_buy_date_value = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
 
@@ -99,11 +108,14 @@ public class Item_Converter {
         Types.Item_Calculate_Types item_calculate_style = Types.Item_Calculate_Types.valueOf(item_model_item_calculate_type_value);
 
         //Item Calculate Type Related Users
-        List<User> item_model_item_calculate_type_related_users = null;
         ViewGroup item_model_item_calculate_type_related_users_view = item_view.findViewById(R.id.item_model_item_calculate_type_related_users_container_editing);
+        Item_Calculate_Style item_calculate_style_override = null;
 
         if (item_calculate_style != Types.Item_Calculate_Types.values()[0]) {
-            item_model_item_calculate_type_related_users = new ArrayList<>();
+            item_calculate_style_override = new Item_Calculate_Style(item_calculate_style);
+            List<User> item_model_item_calculate_type_related_users = new ArrayList<>();
+            item_calculate_style_override.Add_All_Related_Users(item_model_item_calculate_type_related_users);
+
             for (int i = 0; i < item_model_item_calculate_type_related_users_view.getChildCount(); i++) {
                 ToggleButton targ_togglebutton = (ToggleButton) item_model_item_calculate_type_related_users_view.getChildAt(i);
                 if (targ_togglebutton.isChecked()) {
@@ -132,6 +144,20 @@ public class Item_Converter {
             }
         } */
 
+        //Returning Without Calculate Style
+        if (item_calculate_style_override == null) {
+            return new Item_Model(
+                    item_model_buyer_type_related_users,
+                    item_model_buyer_type,
+                    item_model_item_name,
+                    item_model_buy_type,
+                    item_model_item_buy_count,
+                    item_model_item_cost,
+                    item_model_item_discount,
+                    item_model_item_buy_date_value
+            );
+        }
+        //Returning With Calculate Style
         return new Item_Model(
                 item_model_buyer_type_related_users,
                 item_model_buyer_type,
@@ -140,13 +166,32 @@ public class Item_Converter {
                 item_model_item_buy_count,
                 item_model_item_cost,
                 item_model_item_discount,
-                item_model_item_buy_date_value
+                item_model_item_buy_date_value,
+                item_calculate_style_override
         );
     }
 
     //UPDATE PLS
-    public static void Update_Item_Model(View parent, Item_Model targ_item_model) {
+    public static void Update_Item_Model(View parent, Item_Model targ_item_model, List<User> targ_user_list) {
+        Item_Model new_item_model = Convert_Item_View_To_Item_Model(parent, targ_user_list);
+        targ_item_model.Set_Name(new_item_model.Get_Name());
+        targ_item_model.Set_Cost(new_item_model.Get_Cost());
+        targ_item_model.Set_Discount(new_item_model.Get_Discount());
+        targ_item_model.Set_Date(new_item_model.Get_Date());
+        targ_item_model.Set_Buyer_Share_Type(new_item_model.Get_Buyer_Share_Type());
+        targ_item_model.Set_All_Buyers(new_item_model.Get_Buyers());
+        targ_item_model.Set_Buy_Type(new_item_model.Get_Buy_Type());
+        targ_item_model.Set_Calculate_Style(new_item_model.Get_Calculate_Style());
+
+
+
+
         //ADVANCE check values && trim
+
+
+
+
+        /*
         //targ_item_model.Buyer(Integer.valueOf(String.valueOf(((EditText) parent.findViewById(R.id.item_model_item_buyer_editing)).getText()).trim()));
         //targ_item_model.Set_Buy_Date(String.valueOf(((EditText) parent.findViewById(R.id.item_model_item_buy_date_editing)).getText()));
         targ_item_model.Set_Name(String.valueOf(((EditText) parent.findViewById(R.id.item_model_item_name_editing)).getText()));
@@ -167,6 +212,7 @@ public class Item_Converter {
         //targ_item_model.Set_Calculate_Style(item_purpose);
         targ_item_model.Set_Buy_Type(item_buy_type);
         //reach users
+         */
     }
 
     public static void Convert_Item_Model(String style, View parent, String[] item_model_output) {
@@ -174,12 +220,13 @@ public class Item_Converter {
             ((TextView) parent.findViewById(R.id.item_model_item_name)).setText(item_model_output[0]);
             ((TextView) parent.findViewById(R.id.item_model_item_cost)).setText(item_model_output[1]);
             ((TextView) parent.findViewById(R.id.item_model_item_discount)).setText(item_model_output[2]);
-            //((TextView) parent.findViewById(R.id.item_model_item_buy_date)).setText(item_model_output[3]);
+            ((TextView) parent.findViewById(R.id.item_model_item_buy_date)).setText(item_model_output[3]);
             ((TextView) parent.findViewById(R.id.item_model_item_buyer_share_type)).setText(item_model_output[4]);
             ((TextView) parent.findViewById(R.id.item_model_item_buyers)).setText(item_model_output[5]);
             ((TextView) parent.findViewById(R.id.item_model_item_buy_type)).setText(item_model_output[6]);
             ((TextView) parent.findViewById(R.id.item_model_item_calculate_style)).setText(item_model_output[7]);
             ((TextView) parent.findViewById(R.id.item_model_item_calculate_style_relateds)).setText(item_model_output[8]);
+            System.out.println("FINALLL " + item_model_output[7]);
         }
         else if (style.equals("ToEditText")) {
             ((EditText) parent.findViewById(R.id.item_model_item_name_editing)).setText(item_model_output[0]);

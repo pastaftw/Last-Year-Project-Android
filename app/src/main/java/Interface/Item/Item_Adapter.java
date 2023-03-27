@@ -12,7 +12,7 @@ import Processes.Other.User;
 import ae.ogrenci_usulu.R;
 
 public class Item_Adapter extends ArrayAdapter<Item_Model> {
-    //Properties
+    //Values
     Context context;
     List<User> user_list;
     List<Item_Model> item_list;
@@ -44,15 +44,15 @@ public class Item_Adapter extends ArrayAdapter<Item_Model> {
         item_model_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ViewGroup v = (ViewGroup) view.getRootView().findViewById(R.id.item_list_main);
-                parent.setVisibility(View.GONE);
+                ViewGroup v = view.getRootView().findViewById(R.id.invoice_menu_content_root);
+                ((ViewGroup)view.getParent()).setVisibility(View.GONE);
                 Item_Edit a = new Item_Edit();
                 //CALL FUNC
                 a.Bring_Item_Add_Screen(getContext(), v, user_list, current_item_model,  new View[] {parent});
-                notifyDataSetChanged();
             }
         });
 
+        notifyDataSetChanged();
         return item_model_view;
     }
 }

@@ -4,31 +4,39 @@ package Processes.Other;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import Processes.Item.Item_Model;
 import Processes.Item.Item_Calculate_Style;
 
 public class Invoice {
-    //Variables
-    List <User> _Users = new ArrayList<>();
+    //Values
+    List <User> _User_Group = new ArrayList<>();
     List <Item_Model> _Items = new ArrayList<>();
 
-    //Properties
-    public List <User> Users() {return _Users;}
-    public  List <Item_Model> Items() {return _Items;}
 
-    //Functions
-    public void Add_User(User user) {_Users.add(user);}
-    public void Add_User(Integer id, String name, String surname, String username) {_Users.add(new User(id, name, surname, username));}
+    //User Group
+    public List <User> Get_Users() {return _User_Group;}
+    public void Add_User(User user) {_User_Group.add(user);}
+    public void Set_All_Users(List <User> value) {
+        _User_Group.clear();
+        _User_Group.addAll(value);
+    }
+    public void Set_All_Users(User[] value) {
+        _User_Group.clear();
+        _User_Group.addAll(Arrays.asList(value));
+    }
+
+    //Items
+    public List <Item_Model> Get_Items() {return _Items;}
     public void Add_Item (Item_Model item) {_Items.add(item);}
-    public void Add_Purpose(Item_Model to, Types.Item_Calculate_Types type, User user) {
-        if (to.Get_Calculate_Style() == null) {
-            Item_Calculate_Style new_purpose = new Item_Calculate_Style(type);
-            new_purpose.Add_Related_User(user);
-            to.Set_Calculate_Style(new_purpose);
-        }
-        else if (to.Get_Calculate_Style() != null && to.Get_Calculate_Style().Type() == type) {to.Get_Calculate_Style().Add_Related_User(user);}
-        else {throw new Error("Add_Purpose_Item_Fail");}
+    public void Set_All_Items(List <Item_Model> value) {
+        _Items.clear();
+        _Items.addAll(value);
+    }
+    public void Set_All_Items(Item_Model[] value) {
+        _Items.clear();
+        _Items.addAll(Arrays.asList(value));
     }
 }

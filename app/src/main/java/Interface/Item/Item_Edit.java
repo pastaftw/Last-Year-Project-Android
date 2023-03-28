@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 
 import androidx.annotation.Nullable;
 
@@ -17,7 +16,7 @@ public class Item_Edit {
 
     public void Bring_Item_Add_Screen(Context context, ViewGroup container, List<User> user_list, Item_Model item_model, @Nullable View[] relations) {
         LayoutInflater interlater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View item_model_view = interlater.inflate(R.layout.item_card_edit, null);
+        View item_model_view = interlater.inflate(R.layout.invoice_item_card_editing, null);
         Item_Edit_Extra extra_content = new Item_Edit_Extra();
 
         ViewGroup a = extra_content.Bring_Purpose_User_List(context, item_model_view, user_list);
@@ -31,7 +30,7 @@ public class Item_Edit {
 
 
         //On Item Click
-        item_model_view.findViewById(R.id.item_model_button_editing)
+        item_model_view.findViewById(R.id.invoice_item_card_editing_confirm_button)
                 .setOnClickListener(
                         new View.OnClickListener() {
                             //FOR NOW IT'S LIKE THAT BUT I'lL MODULE THIS LATER
@@ -41,7 +40,7 @@ public class Item_Edit {
                                                           if (result) {
                                                               Item_Converter.Convert_Item_View_To_Item_Model(item_model_view, user_list);
                                                               Item_Converter.Update_Item_Model(item_model_view, item_model, user_list);
-                                                              ((ViewGroup)view.getParent()).removeAllViews();
+                                                              container.removeView(item_model_view);
                                                               relations[0].setVisibility(View.VISIBLE);
                                                           }
                                                       }

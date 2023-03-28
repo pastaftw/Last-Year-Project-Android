@@ -61,23 +61,23 @@ public class Item_Converter {
 
     public static Item_Model Convert_Item_View_To_Item_Model(View item_view, List<User> user_list) {
         //Item Name
-        EditText item_model_item_name_view = item_view.findViewById(R.id.item_model_item_name_editing);
+        EditText item_model_item_name_view = item_view.findViewById(R.id.invoice_item_card_editing_name);
         String item_model_item_name = item_model_item_name_view.getText().toString().trim();
 
         //Item Cost
-        EditText item_model_item_cost_view = item_view.findViewById(R.id.item_model_item_cost_editing);
+        EditText item_model_item_cost_view = item_view.findViewById(R.id.invoice_item_card_editing_cost);
         BigDecimal item_model_item_cost = new BigDecimal(item_model_item_cost_view.getText().toString().trim());
 
         //Item Discount
-        EditText item_model_item_discount_view = item_view.findViewById(R.id.item_model_item_discount_editing);
+        EditText item_model_item_discount_view = item_view.findViewById(R.id.invoice_item_card_editing_discount);
         BigDecimal item_model_item_discount = new BigDecimal(item_model_item_discount_view.getText().toString().trim());
 
         //ITEM DATE HERE!! (NOT FINAL) (RETURNS LOCAL TIME FOR NOW) !!!!!!!!!!!
-        EditText item_model_item_buy_date_view = item_view.findViewById(R.id.item_model_item_buy_date_editing);
+        EditText item_model_item_buy_date_view = item_view.findViewById(R.id.invoice_item_card_editing_buy_date);
         String item_model_item_buy_date_value = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
 
         //Item Buyer Share Type
-        ViewGroup item_model_item_buyer_type_view = item_view.findViewById(R.id.item_model_item_buyer_share_type_container_editing);
+        ViewGroup item_model_item_buyer_type_view = item_view.findViewById(R.id.invoice_item_card_editing_buyer_share_type);
         String item_model_item_buyer_type_value = Get_Selected.Only_One_From_Parent(item_model_item_buyer_type_view);
         Types.Item_Buyer_Types item_model_buyer_type = Types.Item_Buyer_Types.valueOf(item_model_item_buyer_type_value);
 
@@ -85,7 +85,7 @@ public class Item_Converter {
         List<Item_Buyer> item_model_buyer_type_related_users = new ArrayList<>();
         BigDecimal item_model_item_buy_count = BigDecimal.valueOf(0);
 
-        ViewGroup item_model_item_buyer_type_related_users_view = item_view.findViewById(R.id.item_model_user_container_editing);
+        ViewGroup item_model_item_buyer_type_related_users_view = item_view.findViewById(R.id.invoice_item_card_editing_buyers);
         for (int i = 0; i < item_model_item_buyer_type_related_users_view.getChildCount(); i++) {
             ViewGroup targ_view =  (ViewGroup) item_model_item_buyer_type_related_users_view.getChildAt(i);
             ToggleButton targ_togglebutton = (ToggleButton) targ_view.getChildAt(0);
@@ -98,17 +98,17 @@ public class Item_Converter {
         }
 
         //Item Buy Type
-        ViewGroup item_model_item_buy_type_view = item_view.findViewById(R.id.item_model_item_buy_type_container_editing);
+        ViewGroup item_model_item_buy_type_view = item_view.findViewById(R.id.invoice_item_card_editing_buy_type);
         String item_model_item_buy_type_value = Get_Selected.Only_One_From_Parent(item_model_item_buy_type_view);
         Types.Item_Buy_Types item_model_buy_type = Types.Item_Buy_Types.valueOf(item_model_item_buy_type_value);
 
         //Item Calculate Type
-        ViewGroup item_model_calculate_type_view = item_view.findViewById(R.id.item_model_item_calculate_type_container_editing);
+        ViewGroup item_model_calculate_type_view = item_view.findViewById(R.id.invoice_item_card_editing_calculate_type);
         String item_model_item_calculate_type_value = Get_Selected.Only_One_From_Parent(item_model_calculate_type_view);
         Types.Item_Calculate_Types item_calculate_style = Types.Item_Calculate_Types.valueOf(item_model_item_calculate_type_value);
 
         //Item Calculate Type Related Users
-        ViewGroup item_model_item_calculate_type_related_users_view = item_view.findViewById(R.id.item_model_item_calculate_type_related_users_container_editing);
+        ViewGroup item_model_item_calculate_type_related_users_view = item_view.findViewById(R.id.invoice_item_card_editing_calculate_type_related_users);
         Item_Calculate_Style item_calculate_style_override = null;
 
         if (item_calculate_style != Types.Item_Calculate_Types.values()[0]) {
@@ -171,7 +171,7 @@ public class Item_Converter {
         );
     }
 
-    //UPDATE PLS
+    //Updating Existing Item_Model
     public static void Update_Item_Model(View parent, Item_Model targ_item_model, List<User> targ_user_list) {
         Item_Model new_item_model = Convert_Item_View_To_Item_Model(parent, targ_user_list);
         targ_item_model.Set_Name(new_item_model.Get_Name());
@@ -183,15 +183,8 @@ public class Item_Converter {
         targ_item_model.Set_Buy_Type(new_item_model.Get_Buy_Type());
         targ_item_model.Set_Calculate_Style(new_item_model.Get_Calculate_Style());
 
-
-
-
-        //ADVANCE check values && trim
-
-
-
-
         /*
+        //ADVANCE check values && trim (LEGACY CODE)
         //targ_item_model.Buyer(Integer.valueOf(String.valueOf(((EditText) parent.findViewById(R.id.item_model_item_buyer_editing)).getText()).trim()));
         //targ_item_model.Set_Buy_Date(String.valueOf(((EditText) parent.findViewById(R.id.item_model_item_buy_date_editing)).getText()));
         targ_item_model.Set_Name(String.valueOf(((EditText) parent.findViewById(R.id.item_model_item_name_editing)).getText()));
@@ -215,25 +208,25 @@ public class Item_Converter {
          */
     }
 
+    //Item Converter
     public static void Convert_Item_Model(String style, View parent, String[] item_model_output) {
         if (style.equals("ToTextView")) {
-            ((TextView) parent.findViewById(R.id.item_model_item_name)).setText(item_model_output[0]);
-            ((TextView) parent.findViewById(R.id.item_model_item_cost)).setText(item_model_output[1]);
-            ((TextView) parent.findViewById(R.id.item_model_item_discount)).setText(item_model_output[2]);
-            ((TextView) parent.findViewById(R.id.item_model_item_buy_date)).setText(item_model_output[3]);
-            ((TextView) parent.findViewById(R.id.item_model_item_buyer_share_type)).setText(item_model_output[4]);
-            ((TextView) parent.findViewById(R.id.item_model_item_buyers)).setText(item_model_output[5]);
-            ((TextView) parent.findViewById(R.id.item_model_item_buy_type)).setText(item_model_output[6]);
-            ((TextView) parent.findViewById(R.id.item_model_item_calculate_style)).setText(item_model_output[7]);
-            ((TextView) parent.findViewById(R.id.item_model_item_calculate_style_relateds)).setText(item_model_output[8]);
-            System.out.println("FINALLL " + item_model_output[7]);
+            ((TextView) parent.findViewById(R.id.invoice_item_card_name)).setText(item_model_output[0]);
+            ((TextView) parent.findViewById(R.id.invoice_item_card_cost)).setText(item_model_output[1]);
+            ((TextView) parent.findViewById(R.id.invoice_item_card_discount)).setText(item_model_output[2]);
+            ((TextView) parent.findViewById(R.id.invoice_item_card_buy_type)).setText(item_model_output[3]);
+            ((TextView) parent.findViewById(R.id.invoice_item_card_share_type)).setText(item_model_output[4]);
+            ((TextView) parent.findViewById(R.id.invoice_item_card_buyers)).setText(item_model_output[5]);
+            ((TextView) parent.findViewById(R.id.invoice_item_card_buy_type)).setText(item_model_output[6]);
+            ((TextView) parent.findViewById(R.id.invoice_item_card_share_type)).setText(item_model_output[7]);
+            ((TextView) parent.findViewById(R.id.invoice_item_card_share_type_related_users)).setText(item_model_output[8]);
         }
         else if (style.equals("ToEditText")) {
-            ((EditText) parent.findViewById(R.id.item_model_item_name_editing)).setText(item_model_output[0]);
-            ((EditText) parent.findViewById(R.id.item_model_item_cost_editing)).setText(item_model_output[1]);
-            ((EditText) parent.findViewById(R.id.item_model_item_discount_editing)).setText(item_model_output[2]);
-            ((EditText) parent.findViewById(R.id.item_model_item_buy_date_editing)).setText(item_model_output[3]);
-            //Transform These
+            //APPLY SELECTED VALUES!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            ((EditText) parent.findViewById(R.id.invoice_item_card_editing_name)).setText(item_model_output[0]);
+            ((EditText) parent.findViewById(R.id.invoice_item_card_editing_cost)).setText(item_model_output[1]);
+            ((EditText) parent.findViewById(R.id.invoice_item_card_editing_discount)).setText(item_model_output[2]);
+            ((EditText) parent.findViewById(R.id.invoice_item_card_editing_buy_date)).setText(item_model_output[3]);
             //( x2 (EditText) parent.findViewById(R.id.item_model_item_buyer_share_type_container_editing)).setText(item_model_output[6]);
             //((EditText) parent.findViewById(R.id.item_model_item_buy_type_container_editing)).setText(item_model_output[0]);
             //((EditText) parent.findViewById(R.id.item_model_item_calculate_type_container_editing)).setText(item_model_output[1]);

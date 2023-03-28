@@ -21,9 +21,9 @@ import ae.ogrenci_usulu.R;
 
 public class Item_Edit_Extra {
     public void Bring_Item_Add_Screen_Extra(Context context, View root, @Nullable ViewGroup[] relations) {
-        ViewGroup item_purpose_container = root.findViewById(R.id.item_model_item_calculate_type_container_editing);
-        ViewGroup item_buy_type_container = root.findViewById(R.id.item_model_item_buy_type_container_editing);
-        ViewGroup item_buyer_container = root.findViewById(R.id.item_model_item_buyer_share_type_container_editing);
+        ViewGroup item_purpose_container = root.findViewById(R.id.invoice_item_card_editing_calculate_type);
+        ViewGroup item_buy_type_container = root.findViewById(R.id.invoice_item_card_editing_buy_type);
+        ViewGroup item_buyer_container = root.findViewById(R.id.invoice_item_card_editing_buyers);
 
         //PURPOSE CONTAINER
         for (byte i = 0; i < Types.Item_Calculate_Types.values().length; i++) {
@@ -89,7 +89,7 @@ public class Item_Edit_Extra {
     }
 
     public ViewGroup Bring_Purpose_User_List(Context context, View root, List<User> user_list) {
-        ViewGroup v = root.findViewById(R.id.item_model_item_calculate_type_related_users_container_editing);
+        ViewGroup v = root.findViewById(R.id.invoice_item_card_editing_calculate_type_related_users);
         for(int i = 0; i < user_list.size(); i++) {
             ToggleButton new_togglebutton = new ToggleButton(context);
             new_togglebutton.setText(user_list.get(i).Name() + " (" + user_list.get(i).Username()+")");
@@ -105,7 +105,7 @@ public class Item_Edit_Extra {
     }
 
     public ViewGroup Bring_User_List(Context context, View root, List<User> user_list) {
-        ViewGroup parent = root.findViewById(R.id.item_model_user_container_editing);
+        ViewGroup parent = root.findViewById(R.id.invoice_item_card_editing_calculate_type_related_users);
 
         for(int i = 0; i < user_list.size(); i++) {
             ToggleButton new_user = new ToggleButton(context);

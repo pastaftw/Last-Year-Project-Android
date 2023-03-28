@@ -1,5 +1,4 @@
 //Handling Items
-
 package Interface.Item;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -27,19 +26,14 @@ public class Item_Adapter extends ArrayAdapter<Item_Model> {
 
     //Override Default
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        View item_model_view;
-        item_model_view = convertView;
+    public View getView(int position, View convert_view, ViewGroup parent) {
+        View item_model_view = convert_view;
         Item_Model current_item_model = item_list.get(position);
 
         if(item_model_view == null) {
-            item_model_view = LayoutInflater.from(context).inflate(R.layout.item_card, parent,false);
+            item_model_view = LayoutInflater.from(context).inflate(R.layout.invoice_item_card, parent,false);
         }
 
-        Item_Converter.Convert_Item_Model("ToTextView", item_model_view, Item_Converter.Get_Item_Output(current_item_model));
-
-        //TEST
-        //Common b = new Common();
         //On Item View Click
         item_model_view.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +46,7 @@ public class Item_Adapter extends ArrayAdapter<Item_Model> {
             }
         });
 
+        Item_Converter.Convert_Item_Model("ToTextView", item_model_view, Item_Converter.Get_Item_Output(current_item_model));
         notifyDataSetChanged();
         return item_model_view;
     }

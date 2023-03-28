@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Invoice User Card Main -->
+
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/invoice_user_card_main"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    >
+
+    <!--Invoice User Card Content-->
+    <LinearLayout
+        android:id="@+id/invoice_user_card_content"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:background="@color/imdat_mavisi"
+        android:layout_marginBottom="5dp"
+        android:padding="10dp"
+        >
+
+        <!--IUC Name-->
+        <TextView
+            android:id="@+id/invoice_user_card_content_name"
+            android:text="INVOICE_USER_CARD_CONTENT_NAME?"
+            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:textColor="@color/black"
+            android:textSize="@dimen/main_text_size"
+            android:textAlignment="center"
+            />
+
+        <!--IUC Surname-->
+        <TextView
+            android:id="@+id/invoice_user_card_content_surname"
+            android:text="INVOICE_USER_CARD_CONTENT_SURNAME?"
+            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:textColor="@color/black"
+            android:textSize="@dimen/secondary_text_size"
+            android:textAlignment="center"
+            />
+
+        <!--IUC Username-->
+        <TextView
+            android:id="@+id/invoice_user_card_content_user_name_username"
+            android:text="INVOICE_USER_CARD_CONTENT_USERNAME?"
+            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:textColor="@color/black"
+            android:textSize="@dimen/secondary_text_size"
+            android:textAlignment="center"
+            />
+    </LinearLayout>
+</TableLayout>

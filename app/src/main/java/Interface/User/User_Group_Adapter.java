@@ -31,6 +31,7 @@ public class User_Group_Adapter extends ArrayAdapter<User> {
             user_model_view = LayoutInflater.from(context).inflate(R.layout.invoice_user_card, parent,false);
         }
 
+        User_Group_Converter.Convert_User_Model("ToTextView", user_model_view, User_Group_Converter.Get_User_Output(targ_user));
         return user_model_view;
     }
 }

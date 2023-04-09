@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <EditText
+            android:id="@+id/invoice_user_card_content_name"
+            android:text="INVOICE_USER_CARD_EDITING?"
+            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:textSize="@dimen/main_text_size"
+            android:textAlignment="center"
+            />
+    </LinearLayout>
+
+</ScrollView>

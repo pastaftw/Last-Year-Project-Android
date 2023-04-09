@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Get_Selected {
 
-    //Getting A Selected Buttons Text
+    //Getting A Selected Buttons Text From A Parent
     public static String Only_One_From_Parent(ViewGroup parent) {
         for (int i = 0; i < parent.getChildCount(); i++) {
             Button targ_button = (Button) parent.getChildAt(i);
@@ -21,8 +21,9 @@ public class Get_Selected {
     }
 
     //Getting Selected Buttons Indexes
+    /*
     public static List<Integer> List_From_Parent(ViewGroup parent) {
-        List<Integer> result = new ArrayList();
+        List<Integer> result = new ArrayList<>();
         for (int i = 0; i < parent.getChildCount(); i++) {
             ToggleButton targ_button = (ToggleButton) parent.getChildAt(i);
             if (targ_button.isChecked()) {
@@ -31,4 +32,5 @@ public class Get_Selected {
         }
         return result;
     }
+     */
 }

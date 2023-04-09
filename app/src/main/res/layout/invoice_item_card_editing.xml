@@ -23,7 +23,7 @@
 
         <!--Item Name-->
         <EditText
-            android:id="@+id/invoice_item_card_editing_name"
+            android:id="@+id/invoice_item_card_editing_content_name"
             android:text="INVOICE_ITEM_CARD_EDITING_NAME"
             android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
@@ -35,7 +35,7 @@
 
         <!--Item Cost-->
         <EditText
-            android:id="@+id/invoice_item_card_editing_cost"
+            android:id="@+id/invoice_item_card_editing_content_cost"
             android:text="INVOICE_ITEM_CARD_EDITING_COST"
             android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
 
         <!--Item Discount-->
         <EditText
-            android:id="@+id/invoice_item_card_editing_discount"
+            android:id="@+id/invoice_item_card_editing_content_discount"
             android:text="INVOICE_ITEM_CARD_EDITING_DISCOUNT"
             android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
@@ -61,8 +61,8 @@
 
         <!--Item Buy Date-->
         <EditText
-            android:id="@+id/invoice_item_card_editing_buy_date"
-            android:text="INVOICE_ITEM_CARD_EDITING_COST"
+            android:id="@+id/invoice_item_card_editing_content_buy_date"
+            android:text="INVOICE_ITEM_CARD_EDITING_BUY_DATE?"
             android:inputType="date"
             android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
@@ -74,7 +74,7 @@
 
         <!--Buyer Share Style-->
         <LinearLayout
-            android:id="@+id/invoice_item_card_editing_buyer_share_type"
+            android:id="@+id/invoice_item_card_editing_content_buyer_share_type"
             android:orientation="vertical"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
@@ -85,7 +85,7 @@
 
         <!--User List-->
         <LinearLayout
-            android:id="@+id/invoice_item_card_editing_buyers"
+            android:id="@+id/invoice_item_card_editing_content_buyers"
             android:orientation="vertical"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
@@ -96,7 +96,7 @@
 
         <!--Item Buy Type-->
         <LinearLayout
-            android:id="@+id/invoice_item_card_editing_buy_type"
+            android:id="@+id/invoice_item_card_editing_content_buy_type"
             android:orientation="vertical"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
@@ -107,7 +107,7 @@
 
         <!--Item Calculate Style-->
         <LinearLayout
-            android:id="@+id/invoice_item_card_editing_calculate_type"
+            android:id="@+id/invoice_item_card_editing_content_calculate_type"
             android:orientation="vertical"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
@@ -118,7 +118,7 @@
 
         <!--Item Calculate Style Related Users-->
         <LinearLayout
-            android:id="@+id/invoice_item_card_editing_calculate_type_related_users"
+            android:id="@+id/invoice_item_card_editing_content_calculate_type_related_users"
             android:orientation="vertical"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
@@ -129,10 +129,20 @@
 
         <!--Confirm Button-->
         <Button
-            android:id="@+id/invoice_item_card_editing_confirm_button"
+            android:id="@+id/invoice_item_card_editing_content_confirm_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/imdat_mavisi"
             android:text="Tıkla"
+            android:layout_gravity="center"
+            />
+        <Button
+            android:id="@+id/invoice_item_card_editing_content_delete_button"
+            android:layout_margin="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/red"
+            android:text="Sil"
             android:layout_gravity="center"
             />
     </LinearLayout>

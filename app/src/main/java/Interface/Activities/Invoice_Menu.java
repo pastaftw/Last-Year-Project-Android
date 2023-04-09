@@ -1,19 +1,18 @@
-package Interface;
+package Interface.Activities;
 
 //Common
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.math.BigDecimal;
 
-import Interface.User.User_Group_Adapter;
+import Interface.Interface_Master;
 import Processes.Item.Item_Buyer;
 import Processes.Item.Item_Model;
 import Processes.Other.Invoice;
@@ -30,9 +29,10 @@ class TEST {
             new User(user_id_index_start++, "Abdullah", "SURNAME_HOLDER", "USERNAME_PLACEHOLDER"),
             new User(user_id_index_start++, "Ayla", "SURNAME_HOLDER", "USERNAME_PLACEHOLDER"),
             new User(user_id_index_start++, "Yusuf", "SURNAME_HOLDER", "USERNAME_PLACEHOLDER"),
-            new User(user_id_index_start++, "Emre", "SURNAME_HOLDER", "USERNAME_PLACEHOLDER"),
             new User(user_id_index_start++, "Volkan", "SURNAME_HOLDER", "USERNAME_PLACEHOLDER"),
             new User(user_id_index_start++, "Mustafa", "SURNAME_HOLDER", "USERNAME_PLACEHOLDER"),
+            new User(user_id_index_start++, "Haki", "SURNAME_HOLDER", "USERNAME_PLACEHOLDER"),
+            new User(user_id_index_start++, "Yağız", "SURNAME_HOLDER", "USERNAME_PLACEHOLDER"),
     };
 
     public static Item_Model[] Items = {                                                                                                                                                     //TEST PARAMS
@@ -67,41 +67,70 @@ class TEST {
     };
 }
 
-public class MainActivity extends AppCompatActivity {
-    LinearLayout user_group_parent;
-    LinearLayout item_model_list_view;
+public class Invoice_Menu extends AppCompatActivity {
+    //Root
+    View root;
+
+    //Buttons
+    Button user_group_button;
+    Button items_button;
+    Button calculate_button;
+
+    //Containers
+    LinearLayout user_group_container;
+    LinearLayout items_container;
+
+    //Other
+    Integer current_menu = -1;
+
+    //Life Cycle Functions
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //Life Cycle Main
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.invoice_menu);
+
         //TESTING//////////////////////////////
         Invoice new_invoice = new Invoice();
         new_invoice.Set_All_Users(TEST.Users);
         new_invoice.Set_All_Items(TEST.Items);
-        //END OF TESTING//////////////////////
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.invoice_menu);
+        ///////////////////////////////////////
 
-        Button invoice_menu_group_button = (Button) findViewById(R.id.invoice_menu_group_button);
-        Button invoice_menu_items_button = (Button) findViewById(R.id.invoice_menu_items_button);
+        root = findViewById(R.id.invoice_menu_content_root);
+        user_group_button = (Button) findViewById(R.id.invoice_menu_group_button);
+        items_button = (Button) findViewById(R.id.invoice_menu_items_button);
+        calculate_button = (Button) findViewById(R.id.invoice_menu_calculate_button);
+        user_group_container = findViewById(R.id.invoice_menu_user_group_content);
+        items_container = findViewById(R.id.invoice_menu_items_content);
+
+        //Prepare
+        user_group_container.setVisibility(View.GONE);
+        items_container.setVisibility(View.GONE);
 
 
-        user_group_parent = findViewById(R.id.invoice_menu_user_group_content);
-        LayoutInflater inflater = LayoutInflater.from(getApplicationContext());
-        View view = inflater.inflate(R.layout.invoice_user_cards_container, null);
-        user_group_parent.addView(view);
-        ListView user_group_list_view = view.findViewById(R.id.invoice_user_cards_container_content);
-        User_Group_Adapter user_group_adapter = new User_Group_Adapter(this, new_invoice.Get_Users());
-        user_group_list_view.setAdapter(user_group_adapter);
+        //Listeners
+        Interface_Master.Prepare_Invoice_Menu(
+                getApplicationContext(),
+                new ViewGroup[] {user_group_container, items_container},
+                new_invoice.Get_Users(), new_invoice.Get_Items()
+        );
 
-        /*
-        item_model_list_view = findViewById(R.id.invoice_menu_items_content);
-        Item_Adapter item_model_list_adapter = new Item_Adapter(this, new_invoice.Get_Users(), new_invoice.Get_Items());
-        item_model_list_view.setAdapter(item_model_list_adapter);
-         */
+        user_group_button.setOnClickListener((View view) -> {
+                if (current_menu != R.id.invoice_menu_user_group_content) {
+                    current_menu = R.id.invoice_menu_user_group_content;
+                    Interface_Master.Show_Targeted_Menu(root, R.id.invoice_menu_user_group_content);
+                }
+        });
 
-        /*
-        item_model_list_view = findViewById(R.id.item_list_listview);
-        Item_Adapter item_model_list_adapter = new Item_Adapter(this, TEST.INV.Users(), TEST.INV.Items());
-        item_model_list_view.setAdapter(item_model_list_adapter);
-        */
+        items_button.setOnClickListener((View view) -> {
+                if (current_menu != R.id.invoice_menu_items_content) {
+                    current_menu = R.id.invoice_menu_items_content;
+                    Interface_Master.Show_Targeted_Menu(root, R.id.invoice_menu_items_content);
+                }
+        });
+
+        calculate_button.setOnClickListener((View view) -> {
+            //CALCULATE
+        });
     }
 }

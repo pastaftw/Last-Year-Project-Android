@@ -11,9 +11,7 @@ public class Item_Edit_Purpose_Click extends Only_1_onClick {
     ViewGroup[] relations;
 
     //Constructor
-    public Item_Edit_Purpose_Click(ViewGroup[] relations) {
-        this.relations = relations;
-    }
+    public Item_Edit_Purpose_Click(ViewGroup[] relations) {this.relations = relations;}
 
     //Override Default
     @Override

@@ -7,25 +7,36 @@
     android:layout_height="wrap_content"
     >
 
-    <LinearLayout
-        android:orientation="vertical"
+    <GridLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/imdat_mavisi"
+        android:gravity="center"
+        android:padding="7dp"
         >
         <Button
             android:id="@+id/invoice_menu_group_button"
-            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:text="Group Users"
             />
         <Button
             android:id="@+id/invoice_menu_items_button"
-            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:text="Items"
             />
-    </LinearLayout>
+        <Button
+            android:id="@+id/invoice_menu_calculate_button"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="CALC"
+            />
+    </GridLayout>
 
     <LinearLayout
         android:id="@+id/invoice_menu_content_root"
@@ -33,17 +44,16 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
-
         <LinearLayout
             android:id="@+id/invoice_menu_items_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/yeni_yesil" />
+            />
         <LinearLayout
             android:id="@+id/invoice_menu_user_group_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/imdat_mavisi" />
+            />
     </LinearLayout>
 
 </LinearLayout>

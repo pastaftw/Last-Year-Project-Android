@@ -42,7 +42,7 @@ public class Item_Adapter extends ArrayAdapter<Item_Model> {
                 ((ViewGroup)view.getParent()).setVisibility(View.GONE);
                 Item_Edit a = new Item_Edit();
                 //CALL FUNC
-                a.Bring_Item_Add_Screen(getContext(), v, user_list, current_item_model,  new View[] {parent});
+                a.Bring_Item_Add_Screen(getContext(), v, user_list, item_list, current_item_model,  new View[] {parent});
             }
         });
 

@@ -28,10 +28,8 @@ public class Item_Edit_Users_Control {
 
         }
 
-        String warning_info = "";
-        Context a = ((View)(users_interface)).getContext();
+        Context a = users_interface.getContext();
         Warning_Info warning_info_handler = new Warning_Info();
-
         Boolean result = true;
 
        if (total_users_selected < 1) {

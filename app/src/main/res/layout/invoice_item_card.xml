@@ -6,7 +6,7 @@
     android:id="@+id/invoice_item_card_main"
     android:orientation="vertical"
     android:layout_height="wrap_content"
-    android:layout_width="fill_parent"
+    android:layout_width="match_parent"
     >
 
     <!--ScrollView Child-->
@@ -14,7 +14,7 @@
         android:id="@+id/invoice_item_card_content"
         android:orientation="vertical"
         android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:background="@color/yeni_yesil"
         android:layout_marginBottom="5dp"
         android:padding="10dp"
@@ -22,66 +22,66 @@
 
         <!--Item Model Name-->
         <TextView
-            android:id="@+id/invoice_item_card_name"
+            android:id="@+id/invoice_item_card_content_name"
             android:text="INVOICE_ITEM_CARD_NAME?"
             android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:textColor="@color/black"
             android:textSize="@dimen/main_text_size"
             android:textAlignment="center"
             />
         <!--Item Model Cost-->
         <TextView
-            android:id="@+id/invoice_item_card_cost"
+            android:id="@+id/invoice_item_card_content_cost"
             android:text="INVOICE_ITEM_CARD_COST?"
             android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:textColor="@color/black"
             android:textSize="@dimen/secondary_text_size"
             android:textAlignment="center"
             />
         <!--Item Model Discount-->
         <TextView
-            android:id="@+id/invoice_item_card_discount"
+            android:id="@+id/invoice_item_card_content_discount"
             android:text="INVOICE_ITEM_CARD_DISCOUNT?"
             android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:textColor="@color/black"
             android:textSize="@dimen/secondary_text_size"
             android:textAlignment="center"
             />
         <!--Item Model Buy Date-->
         <TextView
-            android:id="@+id/invoice_item_card_buy_date"
+            android:id="@+id/invoice_item_card_content_buy_date"
             android:text="INVOICE_ITEM_CARD_BUY_DATE?"
             android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:textColor="@color/black"
             android:textSize="@dimen/secondary_text_size"
             android:textAlignment="center"
             />
         <!--Item Model Buyer Share Type-->
         <TextView
-            android:id="@+id/invoice_item_card_buyer_share_type"
+            android:id="@+id/invoice_item_card_content_buyer_share_type"
             android:text="INVOICE_ITEM_CARD_BUYER_SHARE_TYPE?"
             android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:textColor="@color/black"
             android:textSize="@dimen/secondary_text_size"
             android:textAlignment="center"
             />
 
         <TextView
-            android:id="@+id/invoice_item_card_buyers"
+            android:id="@+id/invoice_item_card_content_buyers"
             android:text="INVOICE_ITEM_CARD_BUYERS?"
             android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:textColor="@color/black"
             android:textSize="@dimen/secondary_text_size"
             android:textAlignment="center"
@@ -89,11 +89,11 @@
 
         <!--Item Model Buy Type-->
         <TextView
-            android:id="@+id/invoice_item_card_buy_type"
+            android:id="@+id/invoice_item_card_content_buy_type"
             android:text="INVOICE_ITEM_CARD_BUY_TYPE?"
             android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:textColor="@color/black"
             android:textSize="@dimen/secondary_text_size"
             android:textAlignment="center"
@@ -101,21 +101,21 @@
 
         <!--Item Model Item Calculate Style-->
         <TextView
-            android:id="@+id/invoice_item_card_share_type"
+            android:id="@+id/invoice_item_card_content_share_type"
             android:text="INVOICE_ITEM_CARD_SHARE_TYPE?"
             android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:textColor="@color/black"
             android:textSize="@dimen/secondary_text_size"
             android:textAlignment="center"
             />
         <TextView
-            android:id="@+id/invoice_item_card_share_type_related_users"
+            android:id="@+id/invoice_item_card_content_share_type_related_users"
             android:text="INVOICE_ITEM_CARD_SHARE_TYPE_RELATED_USERS?"
             android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:textColor="@color/black"
             android:textSize="@dimen/secondary_text_size"
             android:textAlignment="center"

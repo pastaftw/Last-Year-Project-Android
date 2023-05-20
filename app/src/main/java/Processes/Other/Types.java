@@ -7,9 +7,9 @@ public class Types {
         Gram,
     };
 
-    public enum Item_Buyer_Types {
-        Amount, //Default
-        Persantage,
+    public enum Item_Buyer_Share_Types {
+        Amount,         //Total,
+        //Persantage,
     };
 
     public enum Item_Calculate_Types {

@@ -68,9 +68,9 @@ public class Item_Edit_Extra {
         }
 
         //BUYER CONTAINER
-        for (byte i = 0; i < Types.Item_Buyer_Types.values().length; i++) {
+        for (byte i = 0; i < Types.Item_Buyer_Share_Types.values().length; i++) {
             Button new_item_buyer_button = new Button(context);
-            new_item_buyer_button.setText(Types.Item_Buyer_Types.values()[i].name());
+            new_item_buyer_button.setText(Types.Item_Buyer_Share_Types.values()[i].name());
             new_item_buyer_button.setTextSize(20);
 
             //Giving Listener

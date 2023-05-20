@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.math.BigDecimal;
 
 import Interface.Interface_Master;
+import Processes.Calculate.Calculate_Main;
 import Processes.Item.Item_Buyer;
 import Processes.Item.Item_Model;
 import Processes.Other.Invoice;
@@ -25,43 +26,23 @@ class TEST {
 
     public static User[] Users = {
             new User(user_id_index_start++, "Arda", "SURNAME_HOLDER", "USERNAME_PLACEHOLDER"),
-            new User(user_id_index_start++, "Erol", "SURNAME_HOLDER", "USERNAME_PLACEHOLDER"),
+            new User(user_id_index_start++, "Mustafa", "SURNAME_HOLDER", "USERNAME_PLACEHOLDER"),
             new User(user_id_index_start++, "Abdullah", "SURNAME_HOLDER", "USERNAME_PLACEHOLDER"),
             new User(user_id_index_start++, "Ayla", "SURNAME_HOLDER", "USERNAME_PLACEHOLDER"),
-            new User(user_id_index_start++, "Yusuf", "SURNAME_HOLDER", "USERNAME_PLACEHOLDER"),
-            new User(user_id_index_start++, "Volkan", "SURNAME_HOLDER", "USERNAME_PLACEHOLDER"),
-            new User(user_id_index_start++, "Mustafa", "SURNAME_HOLDER", "USERNAME_PLACEHOLDER"),
-            new User(user_id_index_start++, "Haki", "SURNAME_HOLDER", "USERNAME_PLACEHOLDER"),
-            new User(user_id_index_start++, "Yağız", "SURNAME_HOLDER", "USERNAME_PLACEHOLDER"),
     };
 
     public static Item_Model[] Items = {                                                                                                                                                     //TEST PARAMS
             new Item_Model(
                     new Item_Buyer[]{
-                            new Item_Buyer(Users[0], new BigDecimal(16)),
-                            new Item_Buyer(Users[1], new BigDecimal(17)),
+                            new Item_Buyer(Users[0], new BigDecimal(5)),
+                            new Item_Buyer(Users[2], new BigDecimal(35)),
                     },
-                    Types.Item_Buyer_Types.Amount,
+                    Types.Item_Buyer_Share_Types.Amount,
                     "Patates Cipsi",
                     Types.Item_Buy_Types.Countable,
                     BigDecimal.valueOf(1),
-                    BigDecimal.valueOf(29.90),
-                    BigDecimal.valueOf(0),
-                    "DATE_PLACE_HOLDER"
-            ),
-
-            new Item_Model(
-                    new Item_Buyer[]{
-                            new Item_Buyer(Users[2], new BigDecimal(16)),
-                            new Item_Buyer(Users[3], new BigDecimal(17)),
-                            new Item_Buyer(Users[4], new BigDecimal(18)),
-                    },
-                    Types.Item_Buyer_Types.Amount,
-                    "Domates",
-                    Types.Item_Buy_Types.Kilogram,
-                    BigDecimal.valueOf(2),
                     BigDecimal.valueOf(40),
-                    BigDecimal.valueOf(0.2),
+                    BigDecimal.valueOf(0),
                     "DATE_PLACE_HOLDER"
             ),
     };
@@ -130,7 +111,14 @@ public class Invoice_Menu extends AppCompatActivity {
         });
 
         calculate_button.setOnClickListener((View view) -> {
+            System.out.println("EXECUTED_CALCULATE_MODULE!");
             //CALCULATE
+            Calculate_Main new_calculate_main = new Calculate_Main();
+            //Preparing Payment User Info List
+            new_calculate_main.Prepare_Invoice(new_invoice.Get_Users());
+            //START!
+            new_calculate_main.Execute_Calculate(new_invoice.Get_Users(), new_invoice.Get_Items());
+            new_calculate_main.Get_Payments();
         });
     }
 }

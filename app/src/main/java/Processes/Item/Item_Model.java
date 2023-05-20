@@ -18,9 +18,9 @@ public class Item_Model {
     }
 
     //Item Buyer Type
-    Types.Item_Buyer_Types _Item_Buyer_Share_Type;
-    public Types.Item_Buyer_Types Get_Buyer_Share_Type() {return _Item_Buyer_Share_Type;}
-    public void Set_Buyer_Share_Type(Types.Item_Buyer_Types value) {_Item_Buyer_Share_Type = value;}
+    Types.Item_Buyer_Share_Types _Item_Buyer_Share_Type;
+    public Types.Item_Buyer_Share_Types Get_Buyer_Share_Type() {return _Item_Buyer_Share_Type;}
+    public void Set_Buyer_Share_Type(Types.Item_Buyer_Share_Types value) {_Item_Buyer_Share_Type = value;}
 
     //Item Name
     String _Item_Name;
@@ -60,7 +60,7 @@ public class Item_Model {
     //Constructor Default
     public Item_Model (
             List<Item_Buyer> _Item_Buyers,
-            Types.Item_Buyer_Types _Item_Buyer_Share_Type,
+            Types.Item_Buyer_Share_Types _Item_Buyer_Share_Type,
             String _Item_Name,
             Types.Item_Buy_Types _Item_Buy_Type,
             BigDecimal _Item_Buy_Count,
@@ -81,7 +81,7 @@ public class Item_Model {
     //Constructor Test!!!
     public Item_Model (
             Item_Buyer[] _Item_Buyers,
-            Types.Item_Buyer_Types _Item_Buyer_Share_Type,
+            Types.Item_Buyer_Share_Types _Item_Buyer_Share_Type,
             String _Item_Name,
             Types.Item_Buy_Types _Item_Buy_Type,
             BigDecimal _Item_Buy_Count,
@@ -103,7 +103,7 @@ public class Item_Model {
     //Constructor With Calculate Style
     public Item_Model (
             List<Item_Buyer> _Item_Buyers,
-            Types.Item_Buyer_Types _Item_Buyer_Share_Type,
+            Types.Item_Buyer_Share_Types _Item_Buyer_Share_Type,
             String _Item_Name,
             Types.Item_Buy_Types _Item_Buy_Type,
             BigDecimal _Item_Buy_Count,

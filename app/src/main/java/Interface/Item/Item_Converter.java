@@ -79,7 +79,7 @@ public class Item_Converter {
         //Item Buyer Share Type
         ViewGroup item_model_item_buyer_type_view = item_view.findViewById(R.id.invoice_item_card_editing_content_buyer_share_type);
         String item_model_item_buyer_type_value = Get_Selected.Only_One_From_Parent(item_model_item_buyer_type_view);
-        Types.Item_Buyer_Types item_model_buyer_type = Types.Item_Buyer_Types.valueOf(item_model_item_buyer_type_value);
+        Types.Item_Buyer_Share_Types item_model_buyer_type = Types.Item_Buyer_Share_Types.valueOf(item_model_item_buyer_type_value);
 
         //Item Buyers & Item Buy Amount
         List<Item_Buyer> item_model_buyer_type_related_users = new ArrayList<>();

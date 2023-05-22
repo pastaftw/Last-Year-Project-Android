@@ -10,43 +10,11 @@ import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.math.BigDecimal;
-
+import Common.TEST;
 import Interface.Interface_Master;
 import Processes.Calculate.Calculate_Main;
-import Processes.Item.Item_Buyer;
-import Processes.Item.Item_Model;
 import Processes.Other.Invoice;
-import Processes.Other.Types;
-import Processes.Other.User;
 import ae.ogrenci_usulu.R;
-
-class TEST {
-    static Integer user_id_index_start = 0;
-
-    public static User[] Users = {
-            new User(user_id_index_start++, "Arda", "SURNAME_HOLDER", "USERNAME_PLACEHOLDER"),
-            new User(user_id_index_start++, "Mustafa", "SURNAME_HOLDER", "USERNAME_PLACEHOLDER"),
-            new User(user_id_index_start++, "Abdullah", "SURNAME_HOLDER", "USERNAME_PLACEHOLDER"),
-            new User(user_id_index_start++, "Ayla", "SURNAME_HOLDER", "USERNAME_PLACEHOLDER"),
-    };
-
-    public static Item_Model[] Items = {                                                                                                                                                     //TEST PARAMS
-            new Item_Model(
-                    new Item_Buyer[]{
-                            new Item_Buyer(Users[0], new BigDecimal(5)),
-                            new Item_Buyer(Users[2], new BigDecimal(35)),
-                    },
-                    Types.Item_Buyer_Share_Types.Amount,
-                    "Patates Cipsi",
-                    Types.Item_Buy_Types.Countable,
-                    BigDecimal.valueOf(1),
-                    BigDecimal.valueOf(40),
-                    BigDecimal.valueOf(0),
-                    "DATE_PLACE_HOLDER"
-            ),
-    };
-}
 
 public class Invoice_Menu extends AppCompatActivity {
     //Root

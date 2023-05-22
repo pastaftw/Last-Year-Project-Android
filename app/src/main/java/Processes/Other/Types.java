@@ -8,7 +8,8 @@ public class Types {
     };
 
     public enum Item_Buyer_Share_Types {
-        Amount,         //Total,
+        Total, //Default
+        //Amount,
         //Persantage,
     };
 

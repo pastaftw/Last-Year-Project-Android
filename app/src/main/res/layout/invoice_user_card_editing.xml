@@ -5,12 +5,24 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/yeni_yesil"
         >
+
         <EditText
-            android:id="@+id/invoice_user_card_content_name"
+            android:id="@+id/invoice_user_card_editing_content_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="INVOICE_USER_CARD?"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/main_text_size" />
+
+        <EditText
+            android:id="@+id/invoice_user_card_editing_content_surname"
             android:text="INVOICE_USER_CARD_EDITING?"
             android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
@@ -19,6 +31,32 @@
             android:textSize="@dimen/main_text_size"
             android:textAlignment="center"
             />
+        <EditText
+            android:id="@+id/invoice_user_card_editing_content_username"
+            android:text="INVOICE_USER_CARD_EDITING?"
+            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:textSize="@dimen/main_text_size"
+            android:textAlignment="center"
+            />
+        <Button
+            android:id="@+id/invoice_user_card_editing_content_confirm_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/imdat_mavisi"
+            android:text="Onayla"
+            android:layout_gravity="center"
+            />
+        <Button
+            android:id="@+id/invoice_user_card_editing_content_delete_button"
+            android:layout_margin="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/red"
+            android:text="Sil"
+            android:layout_gravity="center"
+            />
     </LinearLayout>
-
 </ScrollView>

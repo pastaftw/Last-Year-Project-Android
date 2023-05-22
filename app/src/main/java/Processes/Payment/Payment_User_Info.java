@@ -11,6 +11,24 @@ import Processes.Other.Types;
 public class Payment_User_Info {
     //Variables
     Integer _Owner_ID;
+    BigDecimal _Payment_Status;
+
+    public Payment_User_Info(Integer id, BigDecimal ps){
+        _Owner_ID = id;
+        _Payment_Status = ps;
+    }
+
+    public Integer Get_Owner_ID() {
+        return _Owner_ID;
+    }
+
+    public BigDecimal Get_Payment() {
+        return _Payment_Status;
+    }
+
+    public void Set_Payment(BigDecimal val){_Payment_Status = val;}
+
+    /*
     List<Payment_Tag> _Payment_Tags = new ArrayList<>();
 
     //Constructor
@@ -31,6 +49,7 @@ public class Payment_User_Info {
     }
     */
 
+    /*
     public void Add_Payment(Integer to_id, Types.Payment_Types payment_type, BigDecimal payment_amount, String payment_for) {
         Payment_Tag new_payment = new Payment_Tag();
         new_payment.Set_To_ID(to_id);
@@ -38,5 +57,6 @@ public class Payment_User_Info {
         new_payment.Set_Payment_For(payment_for);
         _Payment_Tags.add(new_payment);
     }
+     */
 }
 

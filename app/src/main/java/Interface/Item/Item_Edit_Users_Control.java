@@ -6,11 +6,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ToggleButton;
+
+import java.math.BigDecimal;
+
 import Common.Apply_Appearance;
 import Common.Warning_Info;
+import Processes.Item.Item_Model;
+import Processes.Other.Types;
 
 public class Item_Edit_Users_Control {
-    public Boolean Control(ViewGroup users_interface) {
+    public Boolean Control(ViewGroup users_interface, Item_Model item_model) {
         int child_count = users_interface.getChildCount();
         int total_users_selected = 0;
         int total_buy_count = 0;
@@ -23,14 +28,14 @@ public class Item_Edit_Users_Control {
 
             if (targ_toggle.isChecked()) {
                 total_users_selected++;
-                total_buy_count += Integer.valueOf(targ_edittext.getText().toString());
+                total_buy_count += Integer.parseInt(targ_edittext.getText().toString());
             }
 
         }
 
         Context a = users_interface.getContext();
         Warning_Info warning_info_handler = new Warning_Info();
-        Boolean result = true;
+        boolean result = true;
 
        if (total_users_selected < 1) {
            //DOO

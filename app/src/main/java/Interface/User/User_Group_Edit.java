@@ -14,15 +14,22 @@ import Interface.Item.Handlers.Item_Edit_Delete_Click;
 import Interface.Item.Item_Converter;
 import Interface.Item.Item_Edit_Extra;
 import Interface.Item.Item_Edit_Users_Control;
+import Interface.User.Handlers.User_Group_Edit_Confirm_Click;
 import Processes.Item.Item_Model;
 import Processes.Other.User;
 import ae.ogrenci_usulu.R;
 
 public class User_Group_Edit {
-    public void Bring_User_Edit_Screen(Context context, ViewGroup container, List<User> user_list, @Nullable View[] relations) {
+    public void Bring_User_Edit_Screen(Context context, ViewGroup container, User targ_user, List<User> user_list, @Nullable View[] relations) {
         LayoutInflater interlater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View user_group_view = interlater.inflate(R.layout.invoice_user_card_editing, null);
+
+        //Clicks
+        //Item_Converter.Convert_Item_Model("ToEditText", item_model_view, Item_Converter.Get_Item_Output(item_model));
+        User_Group_Converter.Convert_User_Model("ToEditText", user_group_view, User_Group_Converter.Get_User_Output(targ_user));
+        user_group_view.findViewById(R.id.invoice_user_card_editing_content_confirm_button).setOnClickListener(new User_Group_Edit_Confirm_Click(container, user_list, targ_user, user_group_view, relations));
         container.addView(user_group_view, 0);
+
 
         //Item_Edit_Extra extra_content = new Item_Edit_Extra();
         /*

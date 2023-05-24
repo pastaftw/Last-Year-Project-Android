@@ -50,6 +50,15 @@
             android:layout_gravity="center"
             />
         <Button
+            android:id="@+id/invoice_user_card_editing_content_dismiss_button"
+            android:layout_margin="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/vazgec_turuncu"
+            android:text="Vazgec"
+            android:layout_gravity="center"
+            />
+        <Button
             android:id="@+id/invoice_user_card_editing_content_delete_button"
             android:layout_margin="4dp"
             android:layout_width="wrap_content"

@@ -41,8 +41,8 @@ public class User_Group_Edit_Confirm_Click implements View.OnClickListener {
         User_Group_Converter.Update_User_Group_Model(user_model_view, targ_user, user_list);
         //System.out.println("Update" + targ_user.ID()+ " " + targ_user.Name() + " " + targ_user.Surname() + " " +  targ_user.Username());
 
-        container.removeView(user_model_view);
         relations[0].setVisibility(View.VISIBLE);
+        container.removeView(user_model_view);
         /*
         Item_Converter.Convert_Item_View_To_Item_Model(item_model_view, user_list);
         Item_Converter.Update_Item_Model(item_model_view, item_model, user_list);

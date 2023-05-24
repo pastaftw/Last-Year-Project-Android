@@ -37,8 +37,8 @@ public class Item_Edit_Confirm_Click implements View.OnClickListener {
         if (item_edit_users_control.Control(user_group, item_model)) {
             Item_Converter.Convert_Item_View_To_Item_Model(item_model_view, user_list);
             Item_Converter.Update_Item_Model(item_model_view, item_model, user_list);
-            container.removeView(item_model_view);
             relations[0].setVisibility(View.VISIBLE);
+            container.removeView(item_model_view);
         }
     }
 }

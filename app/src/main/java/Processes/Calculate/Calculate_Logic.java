@@ -24,7 +24,7 @@ public class Calculate_Logic {
         else {throw new Error("Item_Amount_Logic ERROR (Type logic is not defined.)");}
     }
 
-    /*
+    /* LEGACY
     //Calculating Discount
 
     static BigDecimal Item_Discount_Logic(BigDecimal last_cost, Integer people_count, BigDecimal discount) {
@@ -203,7 +203,7 @@ public class Calculate_Logic {
                         ));
                     }
                     has_paid = true;
-                    break;
+                    //break;
                 }
             }
             //NOT Paid
@@ -224,7 +224,6 @@ public class Calculate_Logic {
         //Types.Item_Buyer_Share_Types buyer_share_type = item.Get_Buyer_Share_Type(); //!!!!!!!!!!!!!!
         //Buyer Share Types are not avaible in first build. Will be in next.
 
-        int item_buyer_count = item.Get_Buyers().size();
         List<User> related_users = item.Get_Calculate_Style().Get_Releated_Users();
         BigDecimal new_item_cost = Calculate_Control.Substract(item.Get_Cost(), item.Get_Discount());
         BigDecimal cost_per_person = Calculate_Control.Divide(new_item_cost, related_users.size());
@@ -266,17 +265,20 @@ public class Calculate_Logic {
 
     public static void Execute_Logic(List <User> users, List <Item_Model> items, List <Payment_Helper_Tag> tmp_list) {
         System.out.println("Logic Execute:: Started");
-        List <Payment_Helper_Tag> finalize_pht = new ArrayList<>();
+        if (users.size() == 0 || items.size() == 0) {
+            System.out.println("USERS OR ITEMS ARE MISSING!");
+            return;
+        }
 
         //Execute Logic
         for (Item_Model item: items) {
             if (item.Get_Calculate_Style() != null) {
-                System.out.println("Executed:: Special Calculate");
+                System.out.println("Logic:: Special Calculate");
                 Calculate_Logic.Share_Updated(users, item, tmp_list);
                 Calculate_Logic.Ignore_Updated(users, item, tmp_list);
             }
             else {
-                System.out.println("Executed:: Default Calculate");
+                System.out.println("Logic:: Default Calculate");
                 Calculate_Logic.Default_Updated(users, item, tmp_list);
             }
         }

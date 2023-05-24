@@ -28,6 +28,7 @@ public class User_Group_Edit {
         //Item_Converter.Convert_Item_Model("ToEditText", item_model_view, Item_Converter.Get_Item_Output(item_model));
         User_Group_Converter.Convert_User_Model("ToEditText", user_group_view, User_Group_Converter.Get_User_Output(targ_user));
         user_group_view.findViewById(R.id.invoice_user_card_editing_content_confirm_button).setOnClickListener(new User_Group_Edit_Confirm_Click(container, user_list, targ_user, user_group_view, relations));
+        user_group_view.findViewById(R.id.invoice_user_card_editing_content_dismiss_button).setOnClickListener(new Common.Dismiss_Button(container, user_group_view, relations));
         container.addView(user_group_view, 0);
 
 

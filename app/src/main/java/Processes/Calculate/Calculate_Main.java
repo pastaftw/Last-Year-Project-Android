@@ -15,6 +15,7 @@ public class Calculate_Main {
     public List <Payment_User_Info> Get_Payments() {return _Payments;}
 
     //Functions
+    /*
     public void Prepare_Invoice(List <User> invoice_users) {
         if (_Payments.size() > 0) {_Payments.clear();}
 
@@ -23,16 +24,32 @@ public class Calculate_Main {
             _Payments.add(new_result);
         });
     }
+    */
 
-    public void Execute_Calculate(List <User> Users, List <Item_Model> Items) {
+    public void Execute_Calculate(List <User> users, List <Item_Model> items) {
+        //TEMP
         List<Payment_Helper_Tag> tmp_list = new ArrayList<>();
-        Calculate_Logic.Execute_Logic(Users, Items, tmp_list);
+        Calculate_Logic.Execute_Logic(users, items, tmp_list);
+
+        //Reset
+        _Payments.clear();
+
+        //Sorting Final
+        users.forEach(user -> {
+            Payment_User_Info new_payment_user_info = new Payment_User_Info(user.ID(), BigDecimal.valueOf(0));
+            _Payments.add(new_payment_user_info);
+            tmp_list.forEach(tmp -> {
+                if (user.ID().equals(tmp.Get_Owner_ID())) {
+                    new_payment_user_info.Set_Payment(Calculate_Control.Add(new_payment_user_info.Get_Payment(), tmp.Get_Current_Debt()));
+                }
+            });
+        });
 
         System.out.println("RESULTS --------------------------------------" + _Payments.size());
-        tmp_list.forEach((object) -> {
+        _Payments.forEach((object) -> {
             System.out.println(
                     "OWNER: " + object.Get_Owner_ID()
-                    + " Payment Staus: " + object.Get_Current_Debt()
+                            + " Payment Staus: " + object.Get_Payment()
             );
         });
     }

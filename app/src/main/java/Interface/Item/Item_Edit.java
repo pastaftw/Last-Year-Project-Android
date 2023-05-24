@@ -31,6 +31,7 @@ public class Item_Edit {
         ViewGroup user_group_list_view = extra_content.Bring_User_List(context, item_model_view, user_list);
         Item_Edit_Users_Control n = new Item_Edit_Users_Control();
 
+        item_model_view.findViewById(R.id.invoice_item_card_editing_content_dismiss_button).setOnClickListener(new Common.Dismiss_Button(container, item_model_view, relations));
         //On Confirm Click
         item_model_view.findViewById(R.id.invoice_item_card_editing_content_confirm_button).setOnClickListener(new Item_Edit_Confirm_Click(container, user_group_list_view, item_model_view, user_list, item_model, relations));
         //On Delete Click

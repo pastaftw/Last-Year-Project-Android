@@ -83,7 +83,7 @@ public class Invoice_Menu extends AppCompatActivity {
             //CALCULATE
             Calculate_Main new_calculate_main = new Calculate_Main();
             //Preparing Payment User Info List
-            new_calculate_main.Prepare_Invoice(new_invoice.Get_Users());
+            //new_calculate_main.Prepare_Invoice(new_invoice.Get_Users());
             //START!
             new_calculate_main.Execute_Calculate(new_invoice.Get_Users(), new_invoice.Get_Items());
             new_calculate_main.Get_Payments();

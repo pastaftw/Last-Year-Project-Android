@@ -232,6 +232,17 @@ public class Item_Converter {
             //((EditText) parent.findViewById(R.id.item_model_item_calculate_type_container_editing)).setText(item_model_output[1]);
             //((EditText) parent.findViewById(R.id.item_model_item_calculate_type_related_users_container_editing)).setText(item_model_output[7]);
         }
+        else if (style.equals("ToEditText_New")) {
+            //APPLY SELECTED VALUES!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            ((EditText) parent.findViewById(R.id.invoice_item_card_editing_content_name)).setText("Nesne İsmi");
+            ((EditText) parent.findViewById(R.id.invoice_item_card_editing_content_cost)).setText(0);
+            ((EditText) parent.findViewById(R.id.invoice_item_card_editing_content_discount)).setText(0);
+            ((EditText) parent.findViewById(R.id.invoice_item_card_editing_content_buy_date)).setText("Tarih_Kullanılamıyor");
+            //( x2 (EditText) parent.findViewById(R.id.item_model_item_buyer_share_type_container_editing)).setText(item_model_output[6]);
+            //((EditText) parent.findViewById(R.id.item_model_item_buy_type_container_editing)).setText(item_model_output[0]);
+            //((EditText) parent.findViewById(R.id.item_model_item_calculate_type_container_editing)).setText(item_model_output[1]);
+            //((EditText) parent.findViewById(R.id.item_model_item_calculate_type_related_users_container_editing)).setText(item_model_output[7]);
+        }
     }
 }
 

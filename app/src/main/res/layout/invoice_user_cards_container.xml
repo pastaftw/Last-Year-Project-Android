@@ -6,8 +6,17 @@
     android:id="@+id/invoice_user_cards_container_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     >
-
+    <Button
+        android:id="@+id/invoice_user_add"
+        android:layout_margin="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/vazgec_turuncu"
+        android:text="Kullanıcı Ekle"
+        android:layout_gravity="center"
+        />
     <!--Invoice User Card Content -->
     <ListView
         android:id="@+id/invoice_user_cards_container_content"

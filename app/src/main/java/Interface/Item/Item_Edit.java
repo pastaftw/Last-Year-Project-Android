@@ -23,19 +23,29 @@ public class Item_Edit {
         Item_Edit_Extra extra_content = new Item_Edit_Extra();
 
         ViewGroup calculate_style_related_users_view = extra_content.Bring_Purpose_User_List(context, item_model_view, user_list);
-        Item_Converter.Convert_Item_Model("ToEditText", item_model_view, Item_Converter.Get_Item_Output(item_model));
+        ViewGroup user_group_list_view = extra_content.Bring_User_List(context, item_model_view, user_list);
+        System.out.println("Response");
+
+        //MULTI PRCS
+        if (item_model != null) {
+            Item_Converter.Convert_Item_Model("ToEditText", item_model_view, Item_Converter.Get_Item_Output(item_model));
+            item_model_view.findViewById(R.id.invoice_item_card_editing_content_dismiss_button).setOnClickListener(new Common.Dismiss_Button(container, item_model_view, relations));
+            //On Confirm Click
+            item_model_view.findViewById(R.id.invoice_item_card_editing_content_confirm_button).setOnClickListener(new Item_Edit_Confirm_Click(container, user_group_list_view, item_model_view, user_list, item_model, relations));
+            //On Delete Click
+            item_model_view.findViewById(R.id.invoice_item_card_editing_content_delete_button).setOnClickListener(new Item_Edit_Delete_Click(container, item_list, item_model, item_model_view, relations));
+        }
+        else {
+            relations[0].setVisibility(View.INVISIBLE);
+        }
         extra_content.Bring_Item_Add_Screen_Extra(context, item_model_view, new ViewGroup[] {calculate_style_related_users_view});
 
         //layout kontrolleri dizi
         //[] tek tek çağrılıp türüne bakılması try catch ile
-        ViewGroup user_group_list_view = extra_content.Bring_User_List(context, item_model_view, user_list);
-        Item_Edit_Users_Control n = new Item_Edit_Users_Control();
 
-        item_model_view.findViewById(R.id.invoice_item_card_editing_content_dismiss_button).setOnClickListener(new Common.Dismiss_Button(container, item_model_view, relations));
-        //On Confirm Click
-        item_model_view.findViewById(R.id.invoice_item_card_editing_content_confirm_button).setOnClickListener(new Item_Edit_Confirm_Click(container, user_group_list_view, item_model_view, user_list, item_model, relations));
-        //On Delete Click
-        item_model_view.findViewById(R.id.invoice_item_card_editing_content_delete_button).setOnClickListener(new Item_Edit_Delete_Click(container, item_list, item_model, item_model_view, relations));
+        //Item_Edit_Users_Control n = new Item_Edit_Users_Control();
+
+
         container.addView(item_model_view, 0);
     }
 }

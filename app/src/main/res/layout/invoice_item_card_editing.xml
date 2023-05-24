@@ -22,9 +22,18 @@
         >
 
         <!--Item Name-->
+        <TextView
+            android:text="Nesne İsmi:"
+            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:textSize="@dimen/main_text_size"
+            android:textAlignment="center"
+            />
         <EditText
             android:id="@+id/invoice_item_card_editing_content_name"
-            android:text="INVOICE_ITEM_CARD_EDITING_NAME"
+            android:text="Bir Nesne Adı Giriniz"
             android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
@@ -34,9 +43,18 @@
             />
 
         <!--Item Cost-->
+        <TextView
+            android:text="Nesne Ücreti"
+            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:textSize="@dimen/main_text_size"
+            android:textAlignment="center"
+            />
         <EditText
             android:id="@+id/invoice_item_card_editing_content_cost"
-            android:text="INVOICE_ITEM_CARD_EDITING_COST"
+            android:text="0"
             android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
@@ -47,9 +65,18 @@
             />
 
         <!--Item Discount-->
+        <TextView
+            android:text="Nesne İndirimi"
+            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:textSize="@dimen/main_text_size"
+            android:textAlignment="center"
+            />
         <EditText
             android:id="@+id/invoice_item_card_editing_content_discount"
-            android:text="INVOICE_ITEM_CARD_EDITING_DISCOUNT"
+            android:text="0"
             android:layout_alignParentLeft="true"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
@@ -60,6 +87,15 @@
             />
 
         <!--Item Buy Date-->
+        <TextView
+            android:text="Nesne Satın Alım Tarihi"
+            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:textSize="@dimen/main_text_size"
+            android:textAlignment="center"
+            />
         <EditText
             android:id="@+id/invoice_item_card_editing_content_buy_date"
             android:text="INVOICE_ITEM_CARD_EDITING_BUY_DATE?"
@@ -73,6 +109,15 @@
             />
 
         <!--Buyer Share Style-->
+        <TextView
+            android:text="Nesne Satın Alma Paylaşım Türü"
+            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:textSize="@dimen/main_text_size"
+            android:textAlignment="center"
+            />
         <LinearLayout
             android:id="@+id/invoice_item_card_editing_content_buyer_share_type"
             android:orientation="vertical"
@@ -84,6 +129,15 @@
             />
 
         <!--User List-->
+        <TextView
+            android:text="Nesneyi Satın Alan Kişiler"
+            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:textSize="@dimen/main_text_size"
+            android:textAlignment="center"
+            />
         <LinearLayout
             android:id="@+id/invoice_item_card_editing_content_buyers"
             android:orientation="vertical"
@@ -95,6 +149,15 @@
             />
 
         <!--Item Buy Type-->
+        <TextView
+            android:text="Nesne Satın Alım Türü"
+            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:textSize="@dimen/main_text_size"
+            android:textAlignment="center"
+            />
         <LinearLayout
             android:id="@+id/invoice_item_card_editing_content_buy_type"
             android:orientation="vertical"
@@ -106,6 +169,15 @@
             />
 
         <!--Item Calculate Style-->
+        <TextView
+            android:text="Nesne Hesaplanma Stili"
+            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:textSize="@dimen/main_text_size"
+            android:textAlignment="center"
+            />
         <LinearLayout
             android:id="@+id/invoice_item_card_editing_content_calculate_type"
             android:orientation="vertical"

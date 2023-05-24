@@ -208,6 +208,12 @@ public class Item_Converter {
          */
     }
 
+    //Updating Existing Item_Model
+    public static void Create_Item_Model(View parent, Item_Model targ_item_model, List<User> targ_user_list, List<Item_Model> list) {
+        Item_Model new_item_model = Convert_Item_View_To_Item_Model(parent, targ_user_list);
+        list.add(new_item_model);
+    }
+
     //Item Converter
     public static void Convert_Item_Model(String style, View parent, String[] item_model_output) {
         if (style.equals("ToTextView")) {

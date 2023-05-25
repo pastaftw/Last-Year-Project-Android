@@ -10,6 +10,7 @@ import Interface.Item.Item_Converter;
 import Interface.Item.Item_Edit_Users_Control;
 import Processes.Item.Item_Model;
 import Processes.Other.User;
+import ae.ogrenci_usulu.R;
 
 public class Item_Edit_Confirm_Click implements View.OnClickListener {
     //Values
@@ -56,7 +57,7 @@ public class Item_Edit_Confirm_Click implements View.OnClickListener {
             else {
                 Item_Converter.Create_Item_Model(item_model_view, item_model, user_list, iml);
             }
-            relations[0].setVisibility(View.VISIBLE);
+            ((ViewGroup)(relations[0].getParent())).setVisibility(View.VISIBLE);
             container.removeView(item_model_view);
         }
     }

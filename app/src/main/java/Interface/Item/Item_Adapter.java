@@ -39,7 +39,7 @@ public class Item_Adapter extends ArrayAdapter<Item_Model> {
             @Override
             public void onClick(View view) {
                 ViewGroup v = view.getRootView().findViewById(R.id.invoice_menu_content_root);
-                ((ViewGroup)view.getParent()).setVisibility(View.GONE);
+                ((ViewGroup)view.getParent().getParent()).setVisibility(View.INVISIBLE);
                 Item_Edit a = new Item_Edit();
                 //CALL FUNC
                 a.Bring_Item_Add_Screen(getContext(), v, user_list, item_list, current_item_model,  new View[] {parent});

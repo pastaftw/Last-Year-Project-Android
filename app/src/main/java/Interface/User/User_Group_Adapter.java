@@ -39,7 +39,8 @@ public class User_Group_Adapter extends ArrayAdapter<User> {
             @Override
             public void onClick(View view) {
                 ViewGroup v = view.getRootView().findViewById(R.id.invoice_menu_content_root);
-                ((ViewGroup)view.getParent()).setVisibility(View.GONE);
+                //Deneme
+                ((ViewGroup)view.getParent().getParent()).setVisibility(View.INVISIBLE);
                 User_Group_Edit a = new User_Group_Edit();
                 //CALL FUNC
                 a.Bring_User_Edit_Screen(getContext(), v, targ_user, user_group_list,  new View[] {parent});

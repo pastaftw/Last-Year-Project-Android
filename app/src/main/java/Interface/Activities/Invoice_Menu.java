@@ -53,9 +53,8 @@ public class Invoice_Menu extends AppCompatActivity {
         items_container = findViewById(R.id.invoice_menu_items_content);
 
         //Prepare
-        user_group_container.setVisibility(View.GONE);
+        //user_group_container.setVisibility(View.GONE);
         items_container.setVisibility(View.GONE);
-
 
         //Listeners
         Interface_Master.Prepare_Invoice_Menu(

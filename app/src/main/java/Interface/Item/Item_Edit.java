@@ -20,11 +20,10 @@ public class Item_Edit {
     public void Bring_Item_Add_Screen(Context context, ViewGroup container, List<User> user_list, List<Item_Model> item_list, Item_Model item_model, @Nullable View[] relations) {
         LayoutInflater interlater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View item_model_view = interlater.inflate(R.layout.invoice_item_card_editing, null);
-        Item_Edit_Extra extra_content = new Item_Edit_Extra();
 
+        Item_Edit_Extra extra_content = new Item_Edit_Extra();
         ViewGroup calculate_style_related_users_view = extra_content.Bring_Purpose_User_List(context, item_model_view, user_list);
         ViewGroup user_group_list_view = extra_content.Bring_User_List(context, item_model_view, user_list);
-        System.out.println("Response");
 
         //MULTI PRCS
         if (item_model != null) {
@@ -34,20 +33,12 @@ public class Item_Edit {
         }
         else {
             item_model_view.findViewById(R.id.invoice_item_card_editing_content_confirm_button).setOnClickListener(new Item_Edit_Confirm_Click(container, user_group_list_view, item_model_view, user_list, item_model, relations, false, item_list));
-            relations[0].setVisibility(View.INVISIBLE);
         }
 
         //On Delete Click
         item_model_view.findViewById(R.id.invoice_item_card_editing_content_dismiss_button).setOnClickListener(new Common.Dismiss_Button(container, item_model_view, relations));
         item_model_view.findViewById(R.id.invoice_item_card_editing_content_delete_button).setOnClickListener(new Item_Edit_Delete_Click(container, item_list, item_model, item_model_view, relations));
         extra_content.Bring_Item_Add_Screen_Extra(context, item_model_view, new ViewGroup[] {calculate_style_related_users_view});
-
-        //layout kontrolleri dizi
-        //[] tek tek çağrılıp türüne bakılması try catch ile
-
-        //Item_Edit_Users_Control n = new Item_Edit_Users_Control();
-
-
         container.addView(item_model_view, 0);
     }
 }

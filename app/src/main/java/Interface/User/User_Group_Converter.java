@@ -47,6 +47,10 @@ public class User_Group_Converter {
         targ_user_model.Surname(new_item_model.Surname());
         targ_user_model.Username(new_item_model.Username());
     }
+    public static void Create_User_Group_Model(View parent, User targ_user_model, List<User> targ_user_list) {
+        User new_item_model = Convert_User_Group_Model_To_User(parent, targ_user_list);
+        targ_user_list.add(new_item_model);
+    }
 
     //User Converter
     public static void Convert_User_Model (String style, View parent, String[] user_output) {

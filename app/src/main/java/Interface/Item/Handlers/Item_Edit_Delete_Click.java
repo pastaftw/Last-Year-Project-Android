@@ -28,6 +28,6 @@ public class Item_Edit_Delete_Click implements View.OnClickListener {
     public void onClick(View target_view) {
         item_list.remove(target_item);
         parent.removeView(item_model_view);
-        relations[0].setVisibility(View.VISIBLE);
+        ((ViewGroup)(relations[0].getParent())).setVisibility(View.VISIBLE);
     }
 }

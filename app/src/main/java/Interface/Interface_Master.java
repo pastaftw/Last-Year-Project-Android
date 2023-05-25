@@ -14,6 +14,7 @@ import Interface.Item.Item_Adapter;
 import Interface.Item.Item_Converter;
 import Interface.Item.Item_Edit;
 import Interface.User.User_Group_Adapter;
+import Interface.User.User_Group_Edit;
 import Processes.Item.Item_Model;
 import Processes.Other.User;
 import ae.ogrenci_usulu.R;
@@ -23,7 +24,8 @@ public class Interface_Master {
         //User Group
         View invoice_menu_user_group_container = LayoutInflater.from(context).inflate(R.layout.invoice_user_cards_container, null);
         parent[0].addView(invoice_menu_user_group_container);
-        ListView invoice_menu_user_group_view_container = parent[0].findViewById(R.id.invoice_user_cards_container_content);
+        ViewGroup invoice_menu_user_group_view = parent[0].findViewById(R.id.invoice_user_cards_container_content);
+        ListView invoice_menu_user_group_view_container = invoice_menu_user_group_view.findViewById(R.id.invoice_user_cards_container_content);
         User_Group_Adapter item_model_list_adapter = new User_Group_Adapter(context, user_group);
         invoice_menu_user_group_view_container.setAdapter(item_model_list_adapter);
 
@@ -40,7 +42,6 @@ public class Interface_Master {
             @Override
             public void onClick(View view) {
                 Item_Edit a = new Item_Edit();
-                System.out.println("Done!");
                 a.Bring_Item_Add_Screen(context, (ViewGroup) invoice_menu_iten_cards_container, user_group, items, null, new ViewGroup[]{invoice_menu_item_model_view});
             }
         });
@@ -48,7 +49,8 @@ public class Interface_Master {
         invoice_menu_user_group_container.findViewById(R.id.invoice_user_add).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("USER EKLE");
+                User_Group_Edit a = new User_Group_Edit();
+                a.Bring_User_Edit_Screen(context, (ViewGroup) invoice_menu_user_group_container, null, user_group, new ViewGroup[]{invoice_menu_user_group_view});
             }
         });
     }

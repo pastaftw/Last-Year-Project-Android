@@ -15,12 +15,13 @@ import Interface.Item.Item_Converter;
 import Interface.Item.Item_Edit_Extra;
 import Interface.Item.Item_Edit_Users_Control;
 import Interface.User.Handlers.User_Group_Edit_Confirm_Click;
+import Interface.User.Handlers.User_Group_Edit_Delete_Click;
 import Processes.Item.Item_Model;
 import Processes.Other.User;
 import ae.ogrenci_usulu.R;
 
 public class User_Group_Edit {
-    public void Bring_User_Edit_Screen(Context context, ViewGroup container, User targ_user, List<User> user_list, @Nullable View[] relations) {
+    public void Bring_User_Edit_Screen(Context context, ViewGroup container, User targ_user, List<User> user_list, @Nullable View[] relations, List<Item_Model> item_list) {
         LayoutInflater interlater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View user_group_view = interlater.inflate(R.layout.invoice_user_card_editing, null);
 
@@ -36,6 +37,7 @@ public class User_Group_Edit {
 
         //relations[0].setVisibility(View.INVISIBLE);
         user_group_view.findViewById(R.id.invoice_user_card_editing_content_dismiss_button).setOnClickListener(new Common.Dismiss_Button(container, user_group_view, relations));
+        user_group_view.findViewById(R.id.invoice_user_card_editing_content_delete_button).setOnClickListener(new User_Group_Edit_Delete_Click(container, user_group_view, item_list, user_list, targ_user, relations));
         container.addView(user_group_view, 0);
     }
 }

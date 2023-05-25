@@ -26,7 +26,7 @@ public class Interface_Master {
         parent[0].addView(invoice_menu_user_group_container);
         ViewGroup invoice_menu_user_group_view = parent[0].findViewById(R.id.invoice_user_cards_container_content);
         ListView invoice_menu_user_group_view_container = invoice_menu_user_group_view.findViewById(R.id.invoice_user_cards_container_content);
-        User_Group_Adapter item_model_list_adapter = new User_Group_Adapter(context, user_group);
+        User_Group_Adapter item_model_list_adapter = new User_Group_Adapter(context, user_group, items);
         invoice_menu_user_group_view_container.setAdapter(item_model_list_adapter);
 
         //Item_Model
@@ -50,7 +50,7 @@ public class Interface_Master {
             @Override
             public void onClick(View view) {
                 User_Group_Edit a = new User_Group_Edit();
-                a.Bring_User_Edit_Screen(context, (ViewGroup) invoice_menu_user_group_container, null, user_group, new ViewGroup[]{invoice_menu_user_group_view});
+                a.Bring_User_Edit_Screen(context, (ViewGroup) invoice_menu_user_group_container, null, user_group, new ViewGroup[]{invoice_menu_user_group_view}, items);
             }
         });
     }

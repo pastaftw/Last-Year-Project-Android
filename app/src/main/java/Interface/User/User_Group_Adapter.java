@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import java.util.List;
 
 import Interface.Item.Item_Edit;
+import Processes.Item.Item_Model;
 import Processes.Other.User;
 import ae.ogrenci_usulu.R;
 
@@ -17,11 +18,21 @@ public class User_Group_Adapter extends ArrayAdapter<User> {
     Context context;
     List<User> user_group_list;
 
+    List<Item_Model> item_model_list;
+
     //Constructor
+    /*
     public User_Group_Adapter(Context context, List<User> user_group_list) {
         super(context, 0, user_group_list);
         this.context = context;
         this.user_group_list = user_group_list;
+    }*/
+
+    public User_Group_Adapter(Context context, List<User> user_group_list, List<Item_Model> item_model_list) {
+        super(context, 0, user_group_list);
+        this.context = context;
+        this.user_group_list = user_group_list;
+        this.item_model_list = item_model_list;
     }
 
     @Override
@@ -43,7 +54,7 @@ public class User_Group_Adapter extends ArrayAdapter<User> {
                 ((ViewGroup)view.getParent().getParent()).setVisibility(View.INVISIBLE);
                 User_Group_Edit a = new User_Group_Edit();
                 //CALL FUNC
-                a.Bring_User_Edit_Screen(getContext(), v, targ_user, user_group_list,  new View[] {parent});
+                a.Bring_User_Edit_Screen(getContext(), v, targ_user, user_group_list,  new View[] {parent}, item_model_list);
             }
         });
 

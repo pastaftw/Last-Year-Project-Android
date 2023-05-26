@@ -106,6 +106,7 @@ public class Invoice_Menu extends AppCompatActivity {
                     getApplicationContext(),
                     (ViewGroup) root,
                     new_calculate_main.Execute_Calculate(new_invoice.Get_Users(), new_invoice.Get_Items()),
+                    new_invoice.Get_Users(),
                     ((ViewGroup)user_group_container.getParent())
             );
         });

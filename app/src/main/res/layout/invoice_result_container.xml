@@ -8,6 +8,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/result_rengi"
+
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:padding="5dp"
     >
     <TextView
         android:id="@+id/invoice_result_text"
@@ -16,6 +22,7 @@
         android:text="Test_Text"
         android:layout_marginBottom="5dp"
         android:textSize="@dimen/main_text_size"
+        android:textColor="@color/black"
         android:padding="10dp"
         android:gravity="center"
         />

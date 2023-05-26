@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name"> APP_NAME_PLACEHOLDER </string>
+    <string name="app_name"> Öğrenci Usulü (v1.0) </string>
 
     <!--Item Model-->
     <string name="item_model_item_name_title"> Name: </string>

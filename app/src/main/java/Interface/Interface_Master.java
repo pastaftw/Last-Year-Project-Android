@@ -81,7 +81,7 @@ public class Interface_Master {
             invoice_menu_user_group_view.setVisibility(View.GONE);
             invoice_menu_item_model_view.setVisibility(View.VISIBLE);
         }
-        else if (targ == -1) {
+        else if (targ <= -1) {
             invoice_menu_user_group_view.setVisibility(View.GONE);
             invoice_menu_item_model_view.setVisibility(View.GONE);
         }

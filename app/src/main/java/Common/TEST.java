@@ -9,10 +9,10 @@ public class TEST {
     public static Integer user_id_index_start = 0;
 
     public static User[] Users = {
-            new User(user_id_index_start++, "Arda", "SURNAME_HOLDER", "USERNAME_PLACEHOLDER"),
-            new User(user_id_index_start++, "Mustafa", "SURNAME_HOLDER", "USERNAME_PLACEHOLDER"),
-            new User(user_id_index_start++, "Abdullah", "SURNAME_HOLDER", "USERNAME_PLACEHOLDER"),
-            new User(user_id_index_start++, "Ayla", "SURNAME_HOLDER", "USERNAME_PLACEHOLDER"),
+            new User(user_id_index_start++, "Arda", "Soyad_Deneme", "kullanici_arda"),
+            new User(user_id_index_start++, "Mustafa", "Soyad_Deneme", "kullanici_mustafa"),
+            new User(user_id_index_start++, "Abdullah", "Soyad_Deneme", "kullanici_abdullah"),
+            new User(user_id_index_start++, "Ayla", "Soyad_Deneme", "kullanici_ayla"),
     };
 
     public static Item_Model[] Items = {                                                                                                                                                     //TEST PARAMS

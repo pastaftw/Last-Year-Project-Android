@@ -36,6 +36,7 @@ public class User_Group_Edit {
         }
 
         //relations[0].setVisibility(View.INVISIBLE);
+        //((ViewGroup)(relations[0].getParent())).setVisibility(View.INVISIBLE);
         user_group_view.findViewById(R.id.invoice_user_card_editing_content_dismiss_button).setOnClickListener(new Common.Dismiss_Button(container, user_group_view, relations));
         user_group_view.findViewById(R.id.invoice_user_card_editing_content_delete_button).setOnClickListener(new User_Group_Edit_Delete_Click(container, user_group_view, item_list, user_list, targ_user, relations));
         container.addView(user_group_view, 0);

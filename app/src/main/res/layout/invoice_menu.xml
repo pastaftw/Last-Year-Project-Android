@@ -4,14 +4,14 @@
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     >
 
     <GridLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/imdat_mavisi"
+        android:background="@color/imdat_mavisi_2"
         android:gravity="center"
         android:padding="7dp"
         >
@@ -34,7 +34,7 @@
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:text="CALC"
+            android:text="CALCULATE"
             />
     </GridLayout>
 
@@ -42,6 +42,7 @@
         android:id="@+id/invoice_menu_content_root"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/imdat_mavisi_2"
         android:orientation="vertical"
         >
         <LinearLayout

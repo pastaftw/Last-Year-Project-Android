@@ -10,10 +10,11 @@
     <color name="green">#7AFF7C</color>
     <dimen name="main_text_size">23dp</dimen>
     <dimen name="secondary_text_size">20dp</dimen>
-    <color name="imdat_mavisi">#9BB7FF</color>
+    <color name="imdat_mavisi">#52FFE5</color>
     <color name = "red">#FF0000</color>
     <color name="pavyon_pembesi">#FF6EDA</color>
     <color name = "yeni_yesil">#E0FFBC</color>
     <color name = "vazgec_turuncu">#FFB27E</color>
     <color name = "result_rengi">#FF8282</color>
+    <color name="imdat_mavisi_2">#9BB7FF</color>
 </resources>

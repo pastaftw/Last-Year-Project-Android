@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
 
+import androidx.annotation.Nullable;
+
 import java.util.List;
 
 import Interface.Item.Item_Adapter;
@@ -59,6 +61,15 @@ public class Interface_Master {
         ViewGroup invoice_menu_user_group_view = parent.findViewById(R.id.invoice_menu_user_group_content);
         ViewGroup invoice_menu_item_model_view = parent.findViewById(R.id.invoice_menu_items_content);
 
+        while (parent.findViewById(R.id.invoice_result_container_main) != null) {
+            ((ViewGroup)parent).removeView(parent.findViewById(R.id.invoice_result_container_main));
+        }
+
+        /*
+        if (parent.findViewById(R.id.invoice_result_container_main) != null) {
+            ((ViewGroup)parent).removeView(parent.findViewById(R.id.invoice_result_container_main));
+        }*/
+
         invoice_menu_item_model_view.setVisibility(View.GONE);
         invoice_menu_user_group_view.setVisibility(View.GONE);
 
@@ -69,6 +80,10 @@ public class Interface_Master {
         else if (targ == R.id.invoice_menu_items_content) {
             invoice_menu_user_group_view.setVisibility(View.GONE);
             invoice_menu_item_model_view.setVisibility(View.VISIBLE);
+        }
+        else if (targ == -1) {
+            invoice_menu_user_group_view.setVisibility(View.GONE);
+            invoice_menu_item_model_view.setVisibility(View.GONE);
         }
     }
 }

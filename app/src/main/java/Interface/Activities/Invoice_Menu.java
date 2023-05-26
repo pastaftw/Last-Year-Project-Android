@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import Common.TEST;
 import Interface.Interface_Master;
+import Interface.Result.Result_Screen;
 import Processes.Calculate.Calculate_Main;
 import Processes.Other.Invoice;
 import ae.ogrenci_usulu.R;
@@ -84,8 +85,29 @@ public class Invoice_Menu extends AppCompatActivity {
             //Preparing Payment User Info List
             //new_calculate_main.Prepare_Invoice(new_invoice.Get_Users());
             //START!
-            new_calculate_main.Execute_Calculate(new_invoice.Get_Users(), new_invoice.Get_Items());
-            new_calculate_main.Get_Payments();
+
+            //FINAL
+            Result_Screen finalize = new Result_Screen();
+            ((ViewGroup)items_container).setVisibility(View.INVISIBLE);
+            ((ViewGroup)user_group_container).setVisibility(View.INVISIBLE);
+
+            /*
+            if (root.findViewById(R.id.invoice_result_container_main) != null) {
+                ((ViewGroup)root).removeView(root.findViewById(R.id.invoice_result_container_main));
+            }*/
+
+            while (root.findViewById(R.id.invoice_result_container_main) != null) {
+                ((ViewGroup)root).removeView(root.findViewById(R.id.invoice_result_container_main));
+            }
+
+            current_menu = -3;
+
+            finalize.Build_Result_Screen(
+                    getApplicationContext(),
+                    (ViewGroup) root,
+                    new_calculate_main.Execute_Calculate(new_invoice.Get_Users(), new_invoice.Get_Items()),
+                    ((ViewGroup)user_group_container.getParent())
+            );
         });
     }
 }

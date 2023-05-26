@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Invoice Item Cards Container -->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/invoice_result_container_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/result_rengi"
+    >
+    <TextView
+        android:id="@+id/invoice_result_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Test_Text"
+        android:layout_marginBottom="5dp"
+        android:textSize="@dimen/main_text_size"
+        android:padding="10dp"
+        android:gravity="center"
+        />
+    <!--
+    <Button
+        android:id="@+id/invoice_result_container_click"
+        android:layout_margin="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/vazgec_turuncu"
+        android:text="Eşya Ekle"
+        android:layout_gravity="center"
+        />-->
+</LinearLayout>

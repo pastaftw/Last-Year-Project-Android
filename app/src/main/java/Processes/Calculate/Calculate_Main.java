@@ -26,7 +26,7 @@ public class Calculate_Main {
     }
     */
 
-    public void Execute_Calculate(List <User> users, List <Item_Model> items) {
+    public List<Payment_User_Info> Execute_Calculate(List <User> users, List <Item_Model> items) {
         //TEMP
         List<Payment_Helper_Tag> tmp_list = new ArrayList<>();
         Calculate_Logic.Execute_Logic(users, items, tmp_list);
@@ -45,6 +45,8 @@ public class Calculate_Main {
             });
         });
 
+        return _Payments;
+        /*
         System.out.println("RESULTS --------------------------------------" + _Payments.size());
         _Payments.forEach((object) -> {
             System.out.println(
@@ -52,5 +54,6 @@ public class Calculate_Main {
                             + " Payment Staus: " + object.Get_Payment()
             );
         });
+        */
     }
 }

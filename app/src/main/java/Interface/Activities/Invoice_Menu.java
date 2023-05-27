@@ -42,8 +42,8 @@ public class Invoice_Menu extends AppCompatActivity {
 
         //TESTING//////////////////////////////
         Invoice new_invoice = new Invoice();
-        new_invoice.Set_All_Users(TEST.Users);
-        new_invoice.Set_All_Items(TEST.Items);
+        //new_invoice.Set_All_Users(TEST.Users);
+        //new_invoice.Set_All_Items(TEST.Items);
         ///////////////////////////////////////
 
         root = findViewById(R.id.invoice_menu_content_root);

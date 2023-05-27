@@ -7,6 +7,7 @@ import Processes.Other.User;
 
 public class TEST {
     public static Integer user_id_index_start = 0;
+    /*
 
     public static User[] Users = {
             new User(user_id_index_start++, "Arda", "Soyad_Deneme", "kullanici_arda"),
@@ -30,4 +31,5 @@ public class TEST {
                     "DATE_PLACE_HOLDER"
             ),
     };
+    */
 }
